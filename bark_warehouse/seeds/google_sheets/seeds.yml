@@ -100,7 +100,8 @@ seeds:
         order_id: text
         order_date: text
         customer_username: text
-        sku_id: text
+        purchase_id: text
+        purchase_source: text
         quantity: text
         buyer_paid_amount: text
         gross_revenue: text
