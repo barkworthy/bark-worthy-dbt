@@ -8,4 +8,13 @@ bark_warehouse:
       port: 5432
       dbname: "{{ env_var('POSTGRES_DB') }}"
       schema: public
+    ci:
+      type: postgres
+      host: localhost
+      user: testuser
+      password: testpass
+      port: 5432
+      dbname: testdb
+      schema: public
+      threads: 4
   target: dev

@@ -1,0 +1,5 @@
+internal_uuid,shipment_id,order_id,purchase_name,purchase_type,num_boxes,units_received,intl_forwarder_paid_date,intl_forwarder_company,intl_forwarder_contact,freight_type,shipping_cost_php,delivered_date,notes,processed_at
+7936db20-4615-4741-8457-1a1ff175c0f2,1,1,sample_batch,sample,1,,2025-11-12,Xing Hang,Mia,air,810,2025-11-19,,2026-02-21T16:35:39.129298+00:00
+c960799e-c996-4f28-b77a-133d66583cea,3,2,BFLV_100J,sku,7,380,2026-01-22,Zhi Zhen,Auntie Jackie,sea,3696,2026-01-19,delayed because of the holidays,2026-02-21T16:35:39.129298+00:00
+cc2ff0d7-aebe-41f7-92c7-7c75042f66e4,4,3,PKTL_70J,sku,1,,,Xing Hang,Mia,air,,,,2026-02-21T16:35:39.129298+00:00
+e19d5628-cd66-451f-b872-380f0f799be6,5,3,CHBR_100J,sku,,,,Zhi Zhen,Angel Li,sea,,,,2026-02-21T16:35:39.129298+00:00
