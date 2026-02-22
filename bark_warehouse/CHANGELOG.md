@@ -2,6 +2,7 @@
 
 ## v1.1.1
 - changed shopee_sales.net_income to net_revenue
+- fixed manifest handling
 
 ## v1.1.0
 - added warehouse structure (staging, ints, marts)
