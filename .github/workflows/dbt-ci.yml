@@ -49,12 +49,17 @@ jobs:
         working-directory: bark_warehouse
         run: dbt deps --profiles-dir .ci
 
-      # 1️⃣ ALWAYS seed first
       - name: Seed raw fixtures
         working-directory: bark_warehouse
         run: dbt seed --profiles-dir ../.ci --target ci
 
-      # 2️⃣ Pull main branch manifest (for slim CI)
+        - name: Verify seed tables exist
+        working-directory: bark_warehouse
+        run: |
+          psql -h localhost -U testuser -d testdb -c "\dt ci_seed.*"
+        env:
+          PGPASSWORD: testpass
+
       - name: Checkout main for state comparison
         uses: actions/checkout@v4
         with:
@@ -70,7 +75,6 @@ jobs:
             echo "No previous manifest found"
           fi
 
-      # 3️⃣ Run dbt build WITHOUT seeds (critical)
       - name: Run dbt CI
         working-directory: bark_warehouse
         run: |
