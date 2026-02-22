@@ -52,7 +52,7 @@ jobs:
       # Seed fake raw tables into ci_seed schema
       - name: Seed raw fixtures
         working-directory: bark_warehouse
-        run: dbt seed --profiles-dir .ci --target ci
+        run: --profiles-dir ../.ci --target ci
 
       # Pull main branch manifest for slim CI
       - name: Checkout main for state comparison
@@ -74,7 +74,7 @@ jobs:
         working-directory: bark_warehouse
         run: |
           dbt build \
-            --profiles-dir .ci \
+            --profiles-dir ../.ci \
             --target ci \
             --vars '{"raw_schema": "ci_seed"}' \
             --select state:modified+ \
