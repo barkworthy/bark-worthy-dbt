@@ -64,10 +64,10 @@ jobs:
           mkdir -p state
           cd main_branch/bark_warehouse
 
-          dbt deps --profiles-dir .ci
+          dbt deps --profiles-dir ../.ci
 
           dbt parse \
-            --profiles-dir .ci \
+            --profiles-dir ../.ci \
             --target ci
 
           cp target/manifest.json ../../state/manifest.json
