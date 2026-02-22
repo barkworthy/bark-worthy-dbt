@@ -1,5 +1,8 @@
 # Changelog
 
+## v1.1.3
+- changed direct_sales.sku_id to purchase_id and added purchase_source
+
 ## v1.1.2
 - changed shopee_sales.sku_id to purchase_id and added purchase_source
 

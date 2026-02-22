@@ -1,6 +1,7 @@
 version: 2
 
 sources:
+
   - name: google_sheets
     schema: "{{ 'public_ci_seed' if target.name == 'ci' else 'google_sheets' }}"
     tables:
@@ -18,6 +19,7 @@ sources:
       - name: supplier_order_shipments
 
 models:
+
   - name: stg_google_sheets__creator_seedings
     description: ""
     columns:
@@ -100,12 +102,24 @@ models:
       - name: customer_name
         tests:
           - not_null
-      - name: sku_id
+      - name: purchase_id
         tests:
           - relationships:
               arguments:
                 to: ref('stg_google_sheets__sku_versions')
                 field: sku_id
+                where: "purchase_source = 'sku'"
+          - relationships:
+              arguments:
+                to: ref('stg_google_sheets__operating_expenses')
+                field: purchase_name
+                where: "purchase_source = 'operating_expense'"
+      - name: purchase_source
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['sku', 'operating_expense']
       - name: quantity
       - name: payment_date
       - name: payment_method
@@ -284,12 +298,12 @@ models:
               arguments:
                 to: ref('stg_google_sheets__sku_versions')
                 field: sku_id
-                where: purchase_source = 'sku'
+                where: "purchase_source = 'sku'"
           - relationships:
               arguments:
                 to: ref('stg_google_sheets__sku_versions')
                 field: purchase_name
-                where: purchase_source = 'operating_expense'
+                where: "purchase_source = 'operating_expense'"
       - name: purchase_source
         tests:
           - not_null
@@ -334,12 +348,12 @@ models:
               arguments:
                 to: ref('stg_google_sheets__ingredients')
                 field: ingredient_id
-                where: component_type = 'ingredient'
+                where: "component_type = 'ingredient'"
           - relationships:
               arguments:
                 to: ref('stg_google_sheets__sku_versions')
                 field: sku_id
-                where: component_type = 'sku'
+                where: "component_type = 'sku'"
       - name: component_type
         tests:
           - not_null
@@ -347,7 +361,7 @@ models:
               arguments:
                 values: ['ingredient', 'sku']
       - name: component_unit
-        test:
+        tests:
           - accepted_values:
               arguments:
                 values: ['unit', 'gram']
@@ -455,12 +469,12 @@ models:
               arguments:
                 to: ref('stg_google_sheets__ingredients')
                 field: ingredient_id
-                where: purchase_type = 'ingredient'
+                where: "purchase_type = 'ingredient'"
           - relationships:
               arguments:
                 to: ref('stg_google_sheets__sku_versions')
                 field: sku_id
-                where: purchase_type = 'sku'
+                where: "purchase_type = 'sku'"
       - name: purchase_type
         tests:
           - not_null
@@ -525,12 +539,12 @@ models:
               arguments:
                 to: ref('stg_google_sheets__ingredients')
                 field: ingredient_id
-                where: purchase_type = 'ingredient'
+                where: "purchase_type = 'ingredient'"
           - relationships:
               arguments:
                 to: ref('stg_google_sheets__sku_versions')
                 field: sku_id
-                where: purchase_type = 'sku'
+                where: "purchase_type = 'sku'"
       - name: purchase_type
         tests:
           - not_null
