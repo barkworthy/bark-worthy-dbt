@@ -1,6 +1,12 @@
 supplier_name,ingredient_type,ingredient_name,ingredient_id,lab_test_report,notes,internal_uuid,processed_at
 Xing Hang,freeze_dried_treat,beef_liver,BFLV,"Crude Protein 55.11%, Crude Ash 4.2%, Crude Fiber 0.6%, Crude Fat 16.1%, Moisture 7.0%",,04f9994c-08e2-449d-b417-9b1e7005f5f8,2026-02-21T16:31:11.483355+00:00
+Xing Hang,freeze_dried_treat,cat_grass,CTGR,,,aa94470b-d4ab-4cc5-8ae4-a2c3049a8f17,2026-02-21T16:31:11.483355+00:00
+Xing Hang,freeze_dried_treat,duck_liver,DKLV,,,b74fde74-0610-4110-83cf-aa10ae53cef0,2026-02-21T16:31:11.483355+00:00
+Xing Hang,freeze_dried_treat,chicken_liver,CHLV,,,4e1e83d4-b5fe-48bb-bff4-6407596936a1,2026-02-21T16:31:11.483355+00:00
 Xing Hang,freeze_dried_treat,chicken_breast,CHBR,,,7ad7ca6f-3ffd-4fe8-9f70-cae84cc0f830,2026-02-21T16:31:11.483355+00:00
 Xing Hang,freeze_dried_treat,chicken_egg_yolk,CHEY,,,5c69b9f9-40f1-4969-b318-62d535205892,2026-02-21T16:31:11.483355+00:00
 Xing Hang,freeze_dried_treat,pork_tenderloin,PKTL,,custom order. 10-15 days lead time,96f3ddc1-befd-4679-b7fd-e24f2ea3e314,2026-02-21T16:31:11.483355+00:00
 Xing Hang,freeze_dried_treat,pork_kidney,PKKD,,custom order. 10-15 days lead time,ac15fb0d-78f8-4642-9957-92016c8b5742,2026-02-21T16:31:11.483355+00:00
+Xing Hang,freeze_dried_treat,fish_oil_sticks,FIOS,,"chicken, fish oil",c4d3f71d-6c98-44ca-add4-d7102446ea83,2026-02-21T16:31:11.483355+00:00
+Xing Hang,freeze_dried_treat,goat_milk_sticks,GTMS,,"chicken, goats milk",0ed7bbf0-53a2-4482-8fae-64a074e19c98,2026-02-21T16:31:11.483355+00:00
+Xing Hang,freeze_dried_treat,salmon_meat,SLMT,,,7c5c95f9-6b2a-47c1-9879-370c1a86c98e,2026-02-21T16:31:11.483355+00:00
