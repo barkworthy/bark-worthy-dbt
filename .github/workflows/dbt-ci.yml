@@ -82,5 +82,5 @@ jobs:
             echo "No previous manifest — running full build"
             dbt build \
               --profiles-dir ../.ci \
-              --target ci \
+              --target ci
           fi
