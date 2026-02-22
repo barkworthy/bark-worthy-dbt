@@ -277,13 +277,25 @@ models:
       - name: customer_username
         tests:
           - not_null
-      - name: sku_id
+      - name: purchase_id
         tests:
           - not_null
           - relationships:
               arguments:
                 to: ref('stg_google_sheets__sku_versions')
                 field: sku_id
+                where: purchase_source = 'sku'
+          - relationships:
+              arguments:
+                to: ref('stg_google_sheets__sku_versions')
+                field: purchase_name
+                where: purchase_source = 'operating_expense'
+      - name: purchase_source
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['sku', 'operating_expense']
       - name: quantity
         tests:
           - not_null

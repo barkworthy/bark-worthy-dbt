@@ -1,5 +1,8 @@
 # Changelog
 
+## v1.1.2
+- changed shopee_sales.sku_id to purchase_id and added purchase_source
+
 ## v1.1.1
 - changed shopee_sales.net_income to net_revenue
 - fixed manifest handling
