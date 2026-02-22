@@ -1,0 +1,5 @@
+internal_uuid,order_id,order_source,freebie_name,quantity,processed_at
+155cc109-38bb-48da-8e0b-c13cb0341d60,28,direct,plastic_tong,1,2026-02-21T16:35:44.914085+00:00
+c1abcc0f-479a-4a85-a612-9c278faa8ca1,29,direct,plastic_tong,1,2026-02-21T16:35:44.914085+00:00
+15db44ba-6f45-44e9-9bd2-bf8daeaee01a,6,shopee,plastic_tong,1,2026-02-21T16:35:44.914085+00:00
+73b5ab30-9d10-4c7c-8d00-2d4111b506e2,7,shopee,plastic_tong,1,2026-02-21T16:35:44.914085+00:00
