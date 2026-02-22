@@ -1,6 +1,6 @@
 
 name: 'bark_warehouse'
-version: '1.0.0'
+version: '1.0.1'
 profile: 'bark_warehouse'
 
 # These configurations specify where dbt should look for different types of files.
