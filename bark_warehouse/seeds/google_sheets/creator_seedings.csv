@@ -1,4 +1,4 @@
-internal_uuid," seeding_id"," platform"," handle"," initiation_direction"," first_message_date"," product_id_sent"," delivery_date"," first_post_date"," num_static_posts"," num_short_form_videos"," num_ephemeral"," pinned_content"," post_effort_level"," support_level"," posted_after_initial"," sent_raw_footage"," notes"," processed_at"
+internal_uuid,"seeding_id","platform","handle","initiation_direction","first_message_date","product_id_sent","delivery_date","first_post_date","num_static_posts","num_short_form_videos","num_ephemeral","pinned_content","post_effort_level","support_level","posted_after_initial","sent_raw_footage","notes","processed_at"
 396428b7-fa05-4662-a11b-092771e290f8,6,instagram,nuggiethepooh_,outbound,2026-02-05,,,,,,,,,,,,,2026-02-21T18:02:05.302772+00:00
 767ce2b5-8171-4611-9583-da4fa5a327fe,7,instagram,corky_thefrenchie,outbound,2026-02-05,,,,,,,,,,,,,2026-02-21T18:02:05.302772+00:00
 979bf253-faae-4150-b483-43274f847683,8,instagram,zoethehakdog,outbound,2026-01-31,BFLV_100J,2026-02-01,2026-02-05,1,1,2,FALSE,3,3,FALSE,FALSE,shared shopee to sister and friend,2026-02-21T18:02:05.302772+00:00
