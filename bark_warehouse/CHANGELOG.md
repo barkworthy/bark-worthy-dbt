@@ -1,5 +1,8 @@
 # Changelog
 
+## v1.2.0
+- added int_orders_line_items
+
 ## v1.1.3
 - changed direct_sales.sku_id to purchase_id and added purchase_source
 

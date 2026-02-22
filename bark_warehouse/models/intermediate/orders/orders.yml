@@ -1,0 +1,33 @@
+version: 2
+
+models:
+  - name: int_orders_line_items
+    description: ""
+    columns:
+      - name: order_id
+        tests:
+          - not_null
+      - name: order_source
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['shopee', 'direct']
+      - name: customer_name
+        tests:
+          - not_null
+      - name: purchase_id
+        tests:
+          - not_null
+      - name: purchase_source
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['sku', 'operating_expense']
+      - name: quantity
+        tests:
+          - not_null
+      - name: net_revenue
+        tests:
+          - not_null
+      - name: cancel_date
