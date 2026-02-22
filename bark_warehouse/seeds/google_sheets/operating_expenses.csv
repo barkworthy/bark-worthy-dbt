@@ -1,0 +1,5 @@
+expense_id,purchase_date,purchase_name,price,quantity,notes,internal_uuid,processed_at
+7,2025-12-16,round_socials_sticker,434,50,,48738132-3fe9-460f-aab0-6119dcc6f05a,2026-02-21T16:57:10.156713+00:00
+15,2026-01-18,photography_equipment,3154,,"tripod, lightbox, ball head",dd551747-c974-43cf-b92f-694d36867542,2026-02-21T16:57:10.156713+00:00
+18,2026-01-23,photography_equipment,670,,SD card 128 GB,c588c437-8ce0-4934-a9af-cd81d7412bea,2026-02-21T16:57:10.156713+00:00
+19,2026-01-26,thermal_paper,0,20,free with thermal printer,71418794-350c-4929-90a9-827a9cf564c6,2026-02-21T16:57:10.156713+00:00
