@@ -1,0 +1,186 @@
+version: 2
+
+seeds:
+
+  - name: creator_seedings
+    config:
+      column_types:
+        internal_uuid: text
+        seeding_id: text
+        platform: text
+        handle: text
+        initiation_direction: text
+        first_message_date: text
+        product_id_sent: text
+        delivery_date: text
+        first_post_date: text
+        num_static_posts: text
+        num_short_form_videos: text
+        num_ephemeral: text
+        pinned_content: text
+        post_effort_level: text
+        support_level: text
+        posted_after_initial: text
+        sent_raw_footage: text
+        notes: text
+        processed_at: text
+
+  - name: direct_sales
+    config:
+      column_types:
+        internal_uuid: text
+        order_id: text
+        order_timestamp: text
+        customer_name: text
+        sku_id: text
+        quantity: text
+        payment_date: text
+        payment_method: text
+        price_at_purchase: text
+        price_adjustment_reason: text
+        platform: text
+        delivery_method: text
+        delivery_date: text
+        delivery_fee: text
+        delivery_address: text
+        cancel_date: text
+        notes: text
+        processed_at: text
+
+  - name: ingredients
+    config:
+      column_types:
+        supplier_name: text
+        ingredient_type: text
+        ingredient_name: text
+        ingredient_id: text
+        lab_test_report: text
+        notes: text
+        internal_uuid: text
+        processed_at: text
+
+  - name: inventory_movement
+    config:
+      column_types:
+        internal_uuid: text
+        movement_date: text
+        item_name: text
+        item_source: text
+        quantity_change: text
+        movement_type: text
+        notes: text
+        processed_at: text
+
+  - name: operating_expenses
+    config:
+      column_types:
+        expense_id: text
+        purchase_date: text
+        purchase_name: text
+        price: text
+        quantity: text
+        notes: text
+        internal_uuid: text
+        processed_at: text
+
+  - name: order_freebies
+    config:
+      column_types:
+        internal_uuid: text
+        order_id: text
+        order_source: text
+        freebie_name: text
+        quantity: text
+        processed_at: text
+
+  - name: shopee_sales
+    config:
+      column_types:
+        internal_uuid: text
+        order_id: text
+        order_date: text
+        customer_username: text
+        sku_id: text
+        quantity: text
+        buyer_paid_amount: text
+        gross_revenue: text
+        voucher: text
+        fees_and_charges: text
+        net_income: text
+        processed_at: text
+
+  - name: sku_components
+    config:
+      column_types:
+        parent_sku_id: text
+        component_code: text
+        component_type: text
+        component_unit: text
+        component_value: text
+        internal_uuid: text
+        processed_at: text
+
+  - name: sku_pricing
+    config:
+      column_types:
+        internal_uuid: text
+        sku_id: text
+        min_quantity: text
+        max_quantity: text
+        total_price: text
+        price_type: text
+        start_date: text
+        processed_at: text
+
+  - name: sku_versions
+    config:
+      column_types:
+        created_date: text
+        sku_id: text
+        sku_description: text
+        price: text
+        is_bundle: text
+        category: text
+        weight: text
+        packaging: text
+        internal_uuid: text
+        processed_at: text
+
+  - name: supplier_order_line_items
+    config:
+      column_types:
+        internal_uuid: text
+        order_id: text
+        supplier_paid_date: text
+        purchase_name: text
+        purchase_type: text
+        order_quantity: text
+        order_unit: text
+        unit_net_weight_g: text
+        original_order_total_cost: text
+        original_order_currency: text
+        converted_order_cost_php: text
+        supplier_shipped_date: text
+        supplier_name: text
+        supplier_contact: text
+        rejects: text
+        notes: text
+        processed_at: text
+
+  - name: supplier_order_shipments
+    config:
+      column_types:
+        internal_uuid: text
+        shipment_id: text
+        order_id: text
+        purchase_name: text
+        purchase_type: text
+        num_boxes: text
+        units_received: text
+        intl_forwarder_paid_date: text
+        intl_forwarder_company: text
+        intl_forwarder_contact: text
+        freight_type: text
+        shipping_cost_php: text
+        delivered_date: text
+        notes: text
