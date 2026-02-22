@@ -8,6 +8,6 @@ select      internal_uuid,
             nullif(trim(gross_revenue),'')::smallint        as gross_revenue,
             nullif(trim(voucher),'')::float                 as voucher,
             nullif(trim(fees_and_charges),'')::float        as fees_and_charges,
-            nullif(trim(net_income),'')::float              as net_income,
+            nullif(trim(net_revenue),'')::float             as net_revenue,
             processed_at::timestamp
 from        {{ source('google_sheets', 'shopee_sales') }}

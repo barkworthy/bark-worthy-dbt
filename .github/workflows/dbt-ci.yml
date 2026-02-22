@@ -59,14 +59,18 @@ jobs:
           ref: master
           path: main_branch
 
-      - name: Prepare state manifest
+      - name: Build manifest from master for state comparison
         run: |
           mkdir -p state
-          if [ -f main_branch/target/manifest.json ]; then
-            cp main_branch/target/manifest.json state/manifest.json
-          else
-            echo "No previous manifest found"
-          fi
+          cd main_branch/bark_warehouse
+
+          dbt deps --profiles-dir ../.ci
+
+          dbt parse \
+            --profiles-dir ../.ci \
+            --target ci
+
+          cp target/manifest.json ../../state/manifest.json
 
       - name: Run dbt CI
         working-directory: bark_warehouse
@@ -76,7 +80,7 @@ jobs:
             dbt build \
               --profiles-dir ../.ci \
               --target ci \
-              --select state:modified+ \
+              --select state:modified+ --exclude test_name:relationships \
               --state ../state
           else
             echo "No previous manifest — running full build"

@@ -106,7 +106,7 @@ seeds:
         gross_revenue: text
         voucher: text
         fees_and_charges: text
-        net_income: text
+        net_revenue: text
         processed_at: text
 
   - name: sku_components
