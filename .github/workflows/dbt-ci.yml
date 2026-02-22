@@ -70,12 +70,21 @@ jobs:
             echo "No previous manifest found"
           fi
 
-      - name: Run dbt slim CI
+      - name: Run dbt CI
         working-directory: bark_warehouse
         run: |
-          dbt build \
-            --profiles-dir ../.ci \
-            --target ci \
-            --vars '{"raw_schema": "ci_seed"}' \
-            --select state:modified+ \
-            --state state
+          if [ -f ../state/manifest.json ]; then
+            echo "Running slim CI"
+            dbt build \
+              --profiles-dir ../.ci \
+              --target ci \
+              --vars '{"raw_schema": "ci_seed"}' \
+              --select state:modified+ \
+              --state ../state
+          else
+            echo "No previous manifest — running full build"
+            dbt build \
+              --profiles-dir ../.ci \
+              --target ci \
+              --vars '{"raw_schema": "ci_seed"}'
+          fi
