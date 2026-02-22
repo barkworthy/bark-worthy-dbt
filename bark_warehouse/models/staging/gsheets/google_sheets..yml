@@ -1,3 +1,0 @@
-sources:
-  - name: google_sheets
-    schema: "{{ var('raw_schema', 'google_sheets') }}"

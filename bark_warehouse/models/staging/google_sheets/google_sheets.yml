@@ -1,0 +1,542 @@
+version: 2
+
+sources:
+  - name: google_sheets
+    schema: "{{ 'public_ci_seed' if target.name == 'ci' else 'google_sheets' }}"
+    tables:
+      - name: creator_seedings
+      - name: direct_sales
+      - name: ingredients
+      - name: inventory_movement
+      - name: operating_expenses
+      - name: order_freebies
+      - name: shopee_sales
+      - name: sku_components
+      - name: sku_pricing
+      - name: sku_versions
+      - name: supplier_order_line_items
+      - name: supplier_order_shipments
+
+models:
+  - name: stg_google_sheets__creator_seedings
+    description: ""
+    columns:
+      - name: internal_uuid
+        tests:
+          - not_null
+          - unique
+      - name: seeding_id
+        tests:
+          - not_null
+      - name: platform
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['instagram', 'messenger', 'tiktok']
+      - name: handle
+        tests:
+          - not_null
+      - name: initiation_direction
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['outbound', 'inbound']
+      - name: first_message_date
+      - name: product_id_sent
+        tests:
+          - relationships:
+              arguments:
+                to: ref('stg_google_sheets__sku_versions')
+                field: sku_id
+      - name: delivery_date
+      - name: first_post_date
+      - name: num_static_posts
+      - name: num_short_form_videos
+      - name: num_ephemeral
+      - name: pinned_content
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['TRUE', 'FALSE']
+      - name: post_effort_level
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['1', '2', '3']
+      - name: support_level
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['1', '2', '3']
+      - name: posted_after_initial
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['TRUE', 'FALSE']
+      - name: sent_raw_footage
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['TRUE', 'FALSE']
+      - name: notes
+      - name: processed_at
+        tests:
+          - not_null
+  - name: stg_google_sheets__direct_sales
+    description: ""
+    columns:
+      - name: internal_uuid
+        tests:
+          - not_null
+          - unique
+      - name: order_id
+        tests:
+          - not_null
+      - name: order_timestamp
+        tests:
+          - not_null
+      - name: customer_name
+        tests:
+          - not_null
+      - name: sku_id
+        tests:
+          - relationships:
+              arguments:
+                to: ref('stg_google_sheets__sku_versions')
+                field: sku_id
+      - name: quantity
+      - name: payment_date
+      - name: payment_method
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['gcash', 'bank_transfer', 'cash']
+      - name: price_at_purchase
+      - name: price_adjustment_reason
+      - name: platform
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['in_person', 'instagram', 'messenger', 'viber']
+      - name: delivery_method
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['courier', 'free_delivery', 'in_person', 'pick_up']
+      - name: delivery_date
+      - name: delivery_fee
+      - name: delivery_address
+      - name: cancel_date
+      - name: notes
+      - name: processed_at
+  - name: stg_google_sheets__ingredients
+    description: ""
+    columns:
+      - name: supplier_name
+        tests:
+          - not_null
+      - name: ingredient_type
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['freeze_dried_treat']
+      - name: ingredient_name
+        tests:
+          - not_null
+      - name: ingredient_id
+        tests:
+          - not_null
+      - name: lab_test_report
+      - name: notes
+      - name: internal_uuid
+        tests:
+          - not_null
+          - unique
+      - name: processed_at
+        tests:
+          - not_null
+  - name: stg_google_sheets__inventory_movement
+    description: ""
+    columns:
+      - name: internal_uuid
+        tests:
+          - not_null
+          - unique
+      - name: movement_date
+        tests:
+          - not_null
+      - name: item_name
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_google_sheets__sku_versions')
+                field: sku_id
+                where: "item_source = 'sku'"
+          - relationships:
+              arguments:
+                to: ref('stg_google_sheets__operating_expenses')
+                field: purchase_name
+                where: "item_source = 'operating_expense'"
+      - name: item_source
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['sku', 'operating_expense']
+      - name: quantity_change
+        tests:
+          - not_null
+      - name: movement_type
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['replacement', 'giveaway', 'seeding']
+      - name: notes
+      - name: processed_at
+  - name: stg_google_sheets__operating_expenses
+    description: ""
+    columns:
+      - name: expense_id
+        tests:
+          - not_null
+      - name: purchase_date
+        tests:
+          - not_null
+      - name: purchase_name
+        tests:
+          - not_null
+      - name: price
+        tests:
+          - not_null
+      - name: quantity
+      - name: notes
+      - name: internal_uuid
+        tests:
+          - not_null
+          - unique
+      - name: processed_at
+        tests:
+          - not_null
+  - name: stg_google_sheets__order_freebies
+    description: ""
+    columns:
+      - name: internal_uuid
+        tests:
+          - not_null
+          - unique
+      - name: order_id
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_google_sheets__shopee_sales')
+                field: order_id
+                where: "order_source = 'shopee'"
+          - relationships:
+              arguments:
+                to: ref('stg_google_sheets__direct_sales')
+                field: order_id
+                where: "order_source = 'direct'"
+      - name: order_source
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['shopee', 'direct', 'lazada', 'tiktok']
+      - name: freebie_name
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_google_sheets__operating_expenses')
+                field: purchase_name
+      - name: quantity
+        tests:
+          - not_null
+      - name: processed_at
+        tests:
+          - not_null
+  - name: stg_google_sheets__shopee_sales
+    description: ""
+    columns:
+      - name: internal_uuid
+        tests:
+          - not_null
+          - unique
+      - name: order_id
+        tests:
+          - not_null
+      - name: order_date
+        tests:
+          - not_null
+      - name: customer_username
+        tests:
+          - not_null
+      - name: sku_id
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_google_sheets__sku_versions')
+                field: sku_id
+      - name: quantity
+        tests:
+          - not_null
+      - name: buyer_paid_amount
+        tests:
+          - not_null
+      - name: gross_revenue
+        tests:
+          - not_null
+      - name: voucher
+        tests:
+          - not_null
+      - name: fees_and_charges
+        tests:
+          - not_null
+      - name: net_income
+        tests:
+          - not_null
+      - name: processed_at
+        tests:
+          - not_null
+  - name: stg_google_sheets__sku_components
+    description: ""
+    columns:
+      - name: parent_sku_id
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_google_sheets__sku_versions')
+                field: sku_id
+      - name: component_code
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_google_sheets__ingredients')
+                field: ingredient_id
+                where: component_type = 'ingredient'
+          - relationships:
+              arguments:
+                to: ref('stg_google_sheets__sku_versions')
+                field: sku_id
+                where: component_type = 'sku'
+      - name: component_type
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['ingredient', 'sku']
+      - name: component_unit
+        test:
+          - accepted_values:
+              arguments:
+                values: ['unit', 'gram']
+      - name: component_value
+        tests:
+          - not_null
+      - name: internal_uuid
+        tests:
+          - not_null
+          - unique
+      - name: processed_at
+        tests:
+          - not_null
+  - name: stg_google_sheets__sku_pricing
+    description: ""
+    columns:
+      - name: internal_uuid
+        tests:
+          - not_null
+          - unique
+      - name: sku_id
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_google_sheets__sku_versions')
+                field: sku_id
+      - name: min_quantity
+        tests:
+          - not_null
+      - name: max_quantity
+      - name: total_price
+        tests:
+          - not_null
+      - name: price_type
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['srp']
+      - name: start_date
+        tests:
+          - not_null
+      - name: processed_at
+        tests:
+          - not_null
+  - name: stg_google_sheets__sku_versions
+    description: ""
+    columns:
+      - name: created_date
+        tests:
+          - not_null
+      - name: sku_id
+        tests:
+          - not_null
+      - name: sku_description
+        tests:
+          - not_null
+      - name: price
+      - name: is_bundle
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['TRUE', 'FALSE']
+      - name: category
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['treat']
+      - name: weight
+        tests:
+          - not_null
+      - name: packaging
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['jar', 'pouch']
+      - name: internal_uuid
+        tests:
+          - not_null
+          - unique
+      - name: processed_at
+        tests:
+          - not_null
+  - name: stg_google_sheets__supplier_order_line_items
+    description: ""
+    columns:
+      - name: internal_uuid
+        tests:
+          - not_null
+          - unique
+      - name: order_id
+        tests:
+          - not_null
+      - name: supplier_paid_date
+        tests:
+          - not_null
+      - name: purchase_name
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_google_sheets__ingredients')
+                field: ingredient_id
+                where: purchase_type = 'ingredient'
+          - relationships:
+              arguments:
+                to: ref('stg_google_sheets__sku_versions')
+                field: sku_id
+                where: purchase_type = 'sku'
+      - name: purchase_type
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['sku', 'ingredient', 'packaging']
+      - name: order_quantity
+        tests:
+          - not_null
+      - name: order_unit
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['piece', 'bag', 'jar', 'pouch']
+      - name: unit_net_weight_g
+        tests:
+          - not_null
+      - name: original_order_total_cost
+        tests:
+          - not_null
+      - name: original_order_currency
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['USD', 'PHP']
+      - name: converted_order_cost_php
+      - name: supplier_shipped_date
+      - name: supplier_name
+        tests:
+          - not_null
+      - name: supplier_contact
+        tests:
+          - not_null
+      - name: rejects
+      - name: notes
+      - name: processed_at
+        tests:
+          - not_null
+  - name: stg_google_sheets__supplier_order_shipments
+    description: ""
+    columns:
+      - name: internal_uuid
+        tests:
+          - not_null
+          - unique
+      - name: shipment_id
+        tests:
+          - not_null
+      - name: order_id
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_google_sheets__supplier_order_line_items')
+                field: order_id
+      - name: purchase_name
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_google_sheets__ingredients')
+                field: ingredient_id
+                where: purchase_type = 'ingredient'
+          - relationships:
+              arguments:
+                to: ref('stg_google_sheets__sku_versions')
+                field: sku_id
+                where: purchase_type = 'sku'
+      - name: purchase_type
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['sample', 'sku']
+      - name: num_boxes
+      - name: units_received
+      - name: intl_forwarder_paid_date
+      - name: intl_forwarder_company
+        tests:
+          - not_null
+      - name: intl_forwarder_contact
+        tests:
+          - not_null
+      - name: freight_type
+        tests:
+          - not_null
+      - name: shipping_cost_php
+      - name: delivered_date
+      - name: notes

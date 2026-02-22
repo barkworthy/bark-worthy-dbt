@@ -1,5 +1,10 @@
 # Changelog
 
+## v1.1.0
+- added warehouse structure (staging, ints, marts)
+- added 12 staging tables for gsheets sources
+- added yml file and tests
+
 ## v1.0.1
 - added github worflow and pull request template
 - added seed tables for gsheets

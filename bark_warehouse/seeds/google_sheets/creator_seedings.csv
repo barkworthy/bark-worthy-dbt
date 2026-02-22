@@ -1,6 +1,16 @@
-internal_uuid," seeding_id"," platform"," handle"," initiation_direction"," first_message_date"," product_id_sent"," delivery_date"," first_post_date"," num_static_posts"," num_short_form_videos"," num_ephemeral"," pinned_content"," post_effort_level"," support_level"," posted_after_initial"," sent_raw_footage"," notes"," processed_at"
+internal_uuid,seeding_id,platform,handle,initiation_direction,first_message_date,product_id_sent,delivery_date,first_post_date,num_static_posts,num_short_form_videos,num_ephemeral,pinned_content,post_effort_level,support_level,posted_after_initial,sent_raw_footage,notes,processed_at
+9385423d-f1b0-401b-a879-f80fb4c94711,1,instagram,vanityfurph,outbound,2026-01-31,,,,,,,,,,,,,2026-02-21T18:02:05.302772+00:00
+cc939210-e59a-4ffc-a2f4-29fb09f0dd99,2,instagram,wizofpawspetsalon,outbound,,,,,,,,,,,,,not receiving messages,2026-02-21T18:02:05.302772+00:00
+d8c7aac1-25b6-4b68-b205-9c00eaa9d30b,3,instagram,poochpurrfectph,outbound,2026-01-31,,,,,,,,,,,,,2026-02-21T18:02:05.302772+00:00
+87b79a67-1796-422e-8933-c27d54ea7766,4,instagram,chowdergoes,outbound,2026-01-31,,,,,,,,,,,,,2026-02-21T18:02:05.302772+00:00
+9c84e90c-d741-440d-bef0-0fabf6085b80,5,instagram,_lexiethetzucorgitwirl,outbound,2026-01-31,,,,,,,,,,,,,2026-02-21T18:02:05.302772+00:00
 396428b7-fa05-4662-a11b-092771e290f8,6,instagram,nuggiethepooh_,outbound,2026-02-05,,,,,,,,,,,,,2026-02-21T18:02:05.302772+00:00
 767ce2b5-8171-4611-9583-da4fa5a327fe,7,instagram,corky_thefrenchie,outbound,2026-02-05,,,,,,,,,,,,,2026-02-21T18:02:05.302772+00:00
 979bf253-faae-4150-b483-43274f847683,8,instagram,zoethehakdog,outbound,2026-01-31,BFLV_100J,2026-02-01,2026-02-05,1,1,2,FALSE,3,3,FALSE,FALSE,shared shopee to sister and friend,2026-02-21T18:02:05.302772+00:00
 5b4cdb0f-45f1-4c4d-8789-3d9968205fd7,9,instagram,puccithepoospin,outbound,2026-02-05,BFLV_100J,2026-02-06,,,,,,,1,FALSE,FALSE,asked if she should post content but didnt,2026-02-21T18:02:05.302772+00:00
 a8f837ee-84e3-48d0-963f-82db185e1a9d,10,instagram,cocoor3omichi,outbound,2026-02-02,BFLV_100J,2026-02-02,,1,0,2,FALSE,2,1,FALSE,TRUE,,2026-02-21T18:02:05.302772+00:00
+f8cbfa5e-848f-44da-bdb5-03cfc4e251bd,11,instagram,chibhiandfriends,outbound,2026-02-05,BFLV_100J,2026-02-06,2026-02-09,0,0,1,FALSE,1,2,FALSE,FALSE,said their review is still being edited and will post soon,2026-02-21T18:02:05.302772+00:00
+83a110c0-eea4-4b94-a866-73d0539d1cb9,12,instagram,fluffsnbully,inbound,2026-02-07,BFLV_100J,2026-02-07,2026-02-13,0,1,1,TRUE,3,1,FALSE,TRUE,posted late because she was in the hospital w her mom,2026-02-21T18:02:05.302772+00:00
+259d87b2-c548-4737-b560-7b44de8ca190,13,instagram,sabo.the.aspin,outbound,2026-02-05,BFLV_100J,2026-02-06,2026-02-06,0,0,5,TRUE,3,3,TRUE,TRUE,likes all my posts and comments 'fave namin yan' on other seeding posts,2026-02-21T18:02:05.302772+00:00
+8e7f7269-92c7-47db-a8ff-65253bcd37ae,14,instagram,macchiboythepoodle,inbound,2026-02-10,BFLV_100J,2026-02-18,2026-02-18,1,0,1,TRUE,2,1,FALSE,FALSE,,2026-02-21T18:02:05.302772+00:00
+46c88316-a1de-411e-bbdd-432d4a08a1c7,15,instagram,batman.batdog,inbound,2026-02-18,BFLV_100J,,,,,,,,,,,,2026-02-21T18:02:05.302772+00:00

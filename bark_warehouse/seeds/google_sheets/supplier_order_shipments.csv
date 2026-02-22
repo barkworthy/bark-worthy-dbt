@@ -1,5 +1,12 @@
 internal_uuid,shipment_id,order_id,purchase_name,purchase_type,num_boxes,units_received,intl_forwarder_paid_date,intl_forwarder_company,intl_forwarder_contact,freight_type,shipping_cost_php,delivered_date,notes,processed_at
 7936db20-4615-4741-8457-1a1ff175c0f2,1,1,sample_batch,sample,1,,2025-11-12,Xing Hang,Mia,air,810,2025-11-19,,2026-02-21T16:35:39.129298+00:00
+f72cf31b-fbbd-4aeb-9c32-ceef4509fe2b,2,2,BFLV_100J,sku,2,120,2025-12-01,Xing Hang,Mia,air,10440,2025-12-13,,2026-02-21T16:35:39.129298+00:00
 c960799e-c996-4f28-b77a-133d66583cea,3,2,BFLV_100J,sku,7,380,2026-01-22,Zhi Zhen,Auntie Jackie,sea,3696,2026-01-19,delayed because of the holidays,2026-02-21T16:35:39.129298+00:00
 cc2ff0d7-aebe-41f7-92c7-7c75042f66e4,4,3,PKTL_70J,sku,1,,,Xing Hang,Mia,air,,,,2026-02-21T16:35:39.129298+00:00
+dd5d87eb-4220-4a46-9b8e-36ed28b842c3,4,3,CHBR_100J,sku,1,,,Xing Hang,Mia,air,,,,2026-02-21T16:35:39.129298+00:00
+0788d647-c9c3-47b9-9fb1-31929ae37470,4,3,SLMT_80J,sku,1,,,Xing Hang,Mia,air,,,,2026-02-21T16:35:39.129298+00:00
+d064f743-19b1-4cb2-8fe2-18bdc9b9d59b,4,3,ASRT1_90J,sku,1,,,Xing Hang,Mia,air,,,,2026-02-21T16:35:39.129298+00:00
+ca106c39-0e88-48a4-b521-630dfc07406f,5,3,PKTL_70J,sku,,,,Zhi Zhen,Angel Li,sea,,,,2026-02-21T16:35:39.129298+00:00
 e19d5628-cd66-451f-b872-380f0f799be6,5,3,CHBR_100J,sku,,,,Zhi Zhen,Angel Li,sea,,,,2026-02-21T16:35:39.129298+00:00
+2045239f-141a-404c-ae31-46a5c4a10c17,5,3,SLMT_80J,sku,,,,Zhi Zhen,Angel Li,sea,,,,2026-02-21T16:35:39.129298+00:00
+b70d0d42-88ae-44a1-ba26-e3651e6b7d3f,5,3,ASRT1_90J,sku,,,,Zhi Zhen,Angel Li,sea,,,,2026-02-21T16:35:39.129298+00:00

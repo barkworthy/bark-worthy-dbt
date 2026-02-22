@@ -9,5 +9,5 @@ bark_warehouse:
       password: testpass
       port: 5432
       dbname: testdb
-      schema: public
+      schema: "public"
       threads: 4

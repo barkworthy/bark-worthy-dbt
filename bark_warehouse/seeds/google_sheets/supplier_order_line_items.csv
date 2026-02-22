@@ -1,6 +1,20 @@
 internal_uuid,order_id,supplier_paid_date,purchase_name,purchase_type,order_quantity,order_unit,unit_net_weight_g,original_order_total_cost,original_order_currency,converted_order_cost_php,supplier_shipped_date,supplier_name,supplier_contact,rejects,notes,processed_at
 a8e5c7be-b47d-4686-adfa-b3a4693bf44e,1,2025-11-03,sticker_label,packaging,500,piece,1,15,USD,925.44,2025-11-10,Xingtai Yunwei Co.,Crystal Yang,,"90+% stickers are very badly applied. only checked 1 box but none of the stickers were applied as well as the sample. ",2026-02-21T16:31:07.550210+00:00
+67c2c217-64f5-455d-aadc-4d2bdc9c58b1,1,2025-11-03,CTGR,ingredient,1,bag,50,0,USD,,2025-11-10,Xingtai Yunwei Co.,Crystal Yang,,,2026-02-21T16:31:07.550210+00:00
+5d12d431-b9f4-4bfb-9b35-695fba65aa60,1,2025-11-03,DKLV,ingredient,1,bag,50,0,USD,,2025-11-10,Xingtai Yunwei Co.,Crystal Yang,,,2026-02-21T16:31:07.550210+00:00
+bf3b9685-1a64-4311-8d65-1fffa9f9fb9f,1,2025-11-03,CHLV,ingredient,1,bag,50,0,USD,,2025-11-10,Xingtai Yunwei Co.,Crystal Yang,,,2026-02-21T16:31:07.550210+00:00
+20dee5cc-4746-46b4-bacd-126420e38f31,1,2025-11-03,CHBR,ingredient,1,bag,50,0,USD,,2025-11-10,Xingtai Yunwei Co.,Crystal Yang,,,2026-02-21T16:31:07.550210+00:00
 d2be27ba-5307-42e0-9fdd-0cc4606a50ad,1,2025-11-03,BFLV,ingredient,1,bag,50,0,USD,,2025-11-10,Xingtai Yunwei Co.,Crystal Yang,,,2026-02-21T16:31:07.550210+00:00
+8c2d9551-5948-4887-adfc-5b8ccc8263b5,1,2025-11-03,CHEY,ingredient,1,bag,50,0,USD,,2025-11-10,Xingtai Yunwei Co.,Crystal Yang,,,2026-02-21T16:31:07.550210+00:00
+66029e5f-42e9-4325-b310-56a24f5b08c5,1,2025-11-03,BFLV,ingredient,1,bag,100,0,USD,,2025-11-10,Xingtai Yunwei Co.,Crystal Yang,,,2026-02-21T16:31:07.550210+00:00
+4e4d66f9-dd18-46e6-bf85-d53ca0ee0488,1,2025-11-03,BFLV_100J,sku,1,jar,100,0,USD,,2025-11-10,Xingtai Yunwei Co.,Crystal Yang,,,2026-02-21T16:31:07.550210+00:00
 2312a5ff-3b18-4089-847d-ecce5582f72b,2,2025-11-20,BFLV_100J,sku,500,jar,100,300,USD,21184.87,2025-11-26,Xingtai Yunwei Co.,Crystal Yang,,,2026-02-21T16:31:07.550210+00:00
+770882ab-47ab-48df-a6f3-1fa499396b74,2,2025-11-20,SLMT,ingredient,1,bag,50,0,USD,,2025-11-26,Xingtai Yunwei Co.,Crystal Yang,,,2026-02-21T16:31:07.550210+00:00
+de4998bb-1279-4267-8333-30d421fb6bad,2,2025-11-20,BFLV,ingredient,2,bag,500,3.8,USD,,2025-11-26,Xingtai Yunwei Co.,Crystal Yang,,,2026-02-21T16:31:07.550210+00:00
+46c210ee-a457-4a56-9e3f-72b54ae787e4,2,2025-11-20,DKLV,ingredient,2,bag,500,2.1,USD,,2025-11-26,Xingtai Yunwei Co.,Crystal Yang,,,2026-02-21T16:31:07.550210+00:00
+62d0fb46-3b7d-43a7-8bad-538950cac042,2,2025-11-20,CHLV,ingredient,2,bag,500,2.7,USD,,2025-11-26,Xingtai Yunwei Co.,Crystal Yang,,,2026-02-21T16:31:07.550210+00:00
 5cbf3382-c14b-4cd2-9695-f16807548880,3,2026-01-22,PKTL_70J,sku,500,jar,70,1195,USD,207218.55,,Xingtai Yunwei Co.,Angel Li,,"delayed delivery to freight forwarder due to Chinese New Year. Will ship Feb 25 at the earliest, but was already packed as of Feb 9",2026-02-21T16:31:07.550210+00:00
 50e2f17b-b4e5-4b7a-9cfd-7bb3c1965d9a,3,2026-01-22,CHBR_100J,sku,500,jar,100,555,USD,,,Xingtai Yunwei Co.,Angel Li,,,2026-02-21T16:31:07.550210+00:00
+188eec2f-19f2-4b9c-8944-372e87c2afbe,3,2026-01-22,SLMT_80J,sku,500,jar,80,710,USD,,,Xingtai Yunwei Co.,Angel Li,,,2026-02-21T16:31:07.550210+00:00
+c0f51443-ffbb-4d69-b4d6-9aacacfc6b23,3,2026-01-22,ASRT1_90J,sku,500,jar,90,775,USD,,,Xingtai Yunwei Co.,Angel Li,,,2026-02-21T16:31:07.550210+00:00
+e296bf05-eace-4d83-bf3b-f54de2fb6bbb,3,2026-01-22,sticker_label,packaging,8000,piece,1,142,USD,,,Xingtai Yunwei Co.,Angel Li,,,2026-02-21T16:31:07.550210+00:00

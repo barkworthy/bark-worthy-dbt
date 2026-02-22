@@ -1,0 +1,16 @@
+select      internal_uuid,
+            nullif(shipment_id,'')::int                 as shipment_id,
+            nullif(order_id,'')::int                    as order_id,
+            nullif(trim(purchase_name),'')              as purchase_name,
+            nullif(lower(trim(purchase_type)),'')       as purchase_type,
+            nullif(num_boxes,'')::smallint              as num_boxes,
+            nullif(units_received,'')::int              as units_received,
+            nullif(trim(intl_forwarder_paid_date),'')   as intl_forwarder_paid_date,
+            nullif(trim(intl_forwarder_company),'')     as intl_forwarder_company,
+            nullif(trim(intl_forwarder_contact),'')     as intl_forwarder_contact,
+            nullif(lower(trim(freight_type)),'')        as freight_type,
+            nullif(shipping_cost_php,'')::int           as shipping_cost_php,
+            nullif(delivered_date,'')::date             as delivered_date,
+            nullif(trim(notes),'')                      as notes,
+            processed_at::timestamp
+from        {{ source('google_sheets', 'supplier_order_shipments') }}
