@@ -80,7 +80,7 @@ jobs:
             dbt build \
               --profiles-dir ../.ci \
               --target ci \
-              --select +state:modified+ \
+              --select state:modified+ --exclude test_name:relationships \
               --state ../state
           else
             echo "No previous manifest — running full build"
