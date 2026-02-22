@@ -49,12 +49,12 @@ jobs:
         working-directory: bark_warehouse
         run: dbt deps --profiles-dir .ci
 
-      # Seed fake raw tables into ci_seed schema
+      # 1️⃣ ALWAYS seed first
       - name: Seed raw fixtures
         working-directory: bark_warehouse
         run: dbt seed --profiles-dir ../.ci --target ci
 
-      # Pull main branch manifest for slim CI
+      # 2️⃣ Pull main branch manifest (for slim CI)
       - name: Checkout main for state comparison
         uses: actions/checkout@v4
         with:
@@ -70,6 +70,7 @@ jobs:
             echo "No previous manifest found"
           fi
 
+      # 3️⃣ Run dbt build WITHOUT seeds (critical)
       - name: Run dbt CI
         working-directory: bark_warehouse
         run: |
@@ -78,7 +79,7 @@ jobs:
             dbt build \
               --profiles-dir ../.ci \
               --target ci \
-              --vars '{"raw_schema": "ci_seed"}' \
+              --exclude resource_type:seed \
               --select state:modified+ \
               --state ../state
           else
@@ -86,5 +87,5 @@ jobs:
             dbt build \
               --profiles-dir ../.ci \
               --target ci \
-              --vars '{"raw_schema": "ci_seed"}'
+              --exclude resource_type:seed
           fi
