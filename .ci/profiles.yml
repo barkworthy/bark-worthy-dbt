@@ -1,0 +1,13 @@
+bark_warehouse:
+  target: ci
+  outputs:
+
+    ci:
+      type: postgres
+      host: localhost
+      user: testuser
+      password: testpass
+      port: 5432
+      dbname: testdb
+      schema: public
+      threads: 4

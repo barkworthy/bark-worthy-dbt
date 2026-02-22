@@ -1,0 +1,78 @@
+name: dbt CI
+
+on:
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  dbt:
+    runs-on: ubuntu-latest
+
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_DB: testdb
+          POSTGRES_USER: testuser
+          POSTGRES_PASSWORD: testpass
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd="pg_isready -U testuser -d testdb"
+          --health-interval=5s
+          --health-timeout=5s
+          --health-retries=5
+
+    steps:
+      - name: Checkout PR branch
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install project dependencies
+        run: |
+          pip install -r requirements-dev.txt || true
+          pip install dbt-core dbt-postgres
+
+      - name: Wait for Postgres
+        run: |
+          for i in {1..30}; do
+            pg_isready -h localhost -p 5432 -U testuser -d testdb && break
+            echo "Waiting for postgres..."
+            sleep 2
+          done
+
+      - name: dbt deps
+        run: dbt deps --profiles-dir .ci
+
+      # Seed fake raw tables into ci_seed schema
+      - name: Seed raw fixtures
+        run: dbt seed --profiles-dir .ci --target ci
+
+      # Pull main branch manifest for slim CI
+      - name: Checkout main for state comparison
+        uses: actions/checkout@v4
+        with:
+          ref: master
+          path: main_branch
+
+      - name: Prepare state manifest
+        run: |
+          mkdir -p state
+          if [ -f main_branch/target/manifest.json ]; then
+            cp main_branch/target/manifest.json state/manifest.json
+          else
+            echo "No previous manifest found"
+          fi
+
+      - name: Run dbt slim CI
+        run: |
+          dbt build \
+            --profiles-dir .ci \
+            --target ci \
+            --vars '{"raw_schema": "ci_seed"}' \
+            --select state:modified+ \
+            --state state
