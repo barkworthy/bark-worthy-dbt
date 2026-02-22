@@ -299,7 +299,7 @@ models:
       - name: fees_and_charges
         tests:
           - not_null
-      - name: net_income
+      - name: net_revenue
         tests:
           - not_null
       - name: processed_at
