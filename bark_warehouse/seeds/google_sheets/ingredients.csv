@@ -1,3 +1,4 @@
+supplier_name,ingredient_type,ingredient_name,ingredient_id,lab_test_report,notes,internal_uuid,processed_at
 Xing Hang,freeze_dried_treat,beef_liver,BFLV,"Crude Protein 55.11%, Crude Ash 4.2%, Crude Fiber 0.6%, Crude Fat 16.1%, Moisture 7.0%",,04f9994c-08e2-449d-b417-9b1e7005f5f8,2026-02-21T16:31:11.483355+00:00
 Xing Hang,freeze_dried_treat,chicken_breast,CHBR,,,7ad7ca6f-3ffd-4fe8-9f70-cae84cc0f830,2026-02-21T16:31:11.483355+00:00
 Xing Hang,freeze_dried_treat,chicken_egg_yolk,CHEY,,,5c69b9f9-40f1-4969-b318-62d535205892,2026-02-21T16:31:11.483355+00:00
