@@ -46,10 +46,12 @@ jobs:
           done
 
       - name: dbt deps
+        working-directory: bark_warehouse
         run: dbt deps --profiles-dir .ci
 
       # Seed fake raw tables into ci_seed schema
       - name: Seed raw fixtures
+        working-directory: bark_warehouse
         run: dbt seed --profiles-dir .ci --target ci
 
       # Pull main branch manifest for slim CI
@@ -69,6 +71,7 @@ jobs:
           fi
 
       - name: Run dbt slim CI
+        working-directory: bark_warehouse
         run: |
           dbt build \
             --profiles-dir .ci \
