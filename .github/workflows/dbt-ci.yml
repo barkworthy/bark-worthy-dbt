@@ -53,13 +53,6 @@ jobs:
         working-directory: bark_warehouse
         run: dbt seed --profiles-dir ../.ci --target ci
 
-      - name: Verify seed tables exist
-        working-directory: bark_warehouse
-        run: |
-          psql -h localhost -U testuser -d testdb -c "\dt ci_seed.*"
-        env:
-          PGPASSWORD: testpass
-
       - name: Checkout main for state comparison
         uses: actions/checkout@v4
         with:
@@ -83,7 +76,6 @@ jobs:
             dbt build \
               --profiles-dir ../.ci \
               --target ci \
-              --exclude resource_type:seed \
               --select state:modified+ \
               --state ../state
           else
@@ -91,5 +83,4 @@ jobs:
             dbt build \
               --profiles-dir ../.ci \
               --target ci \
-              --exclude resource_type:seed
           fi
