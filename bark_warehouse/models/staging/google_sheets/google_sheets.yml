@@ -2,7 +2,7 @@ version: 2
 
 sources:
   - name: google_sheets
-    schema: "{{ var('raw_schema', 'google_sheets') }}"
+    schema: "{{ 'ci_seed' if target.name == 'ci' else 'google_sheets' }}"
     tables:
       - name: creator_seedings
       - name: direct_sales
