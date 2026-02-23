@@ -12,6 +12,7 @@ seeds:
         initiation_direction: text
         first_message_date: text
         product_id_sent: text
+        product_type: text
         delivery_date: text
         first_post_date: text
         num_static_posts: text
@@ -72,12 +73,13 @@ seeds:
         notes: text
         processed_at: text
 
-  - name: operating_expenses
+  - name: non_sku_purchases
     config:
       column_types:
         expense_id: text
         purchase_date: text
         purchase_name: text
+        purchase_type: text
         price: text
         quantity: text
         notes: text
