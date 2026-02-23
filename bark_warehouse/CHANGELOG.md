@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.3.0
+- changed operating_expenses to non_sku_purchases
+- changed purchase_source and item_source columns to purchase_type and item_type
+
 ## v1.2.0
 - added int_orders_line_items
 

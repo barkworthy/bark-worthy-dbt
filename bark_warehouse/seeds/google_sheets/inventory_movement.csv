@@ -1,5 +1,5 @@
-internal_uuid,movement_date,item_name,item_source,quantity_change,movement_type,notes,processed_at
-0aba4a86-8023-4716-93ef-b28b563e1a41,2026-02-04,small_paper_bag,operating_expense,-1,replacement,,2026-02-21T16:31:31.010777+00:00
-c24134fd-644c-4ef9-a556-9be5b4c6a807,2026-02-10,BFLV_100J,sku,-1,giveaway,Dad's social media team,2026-02-21T16:31:31.010777+00:00
-729f9833-03c7-4ada-9bb8-dd11332a7d59,2026-02-18,small_paper_bag,operating_expense,-1,seeding,,2026-02-21T16:31:31.010777+00:00
-fe4e0583-6256-4f27-aa69-affba7a654e1,2026-02-18,plastic_tong,operating_expense,-1,seeding,,2026-02-21T16:31:31.010777+00:00
+internal_uuid,movement_date,item_name,item_type,quantity_change,movement_type,notes,processed_at
+0aba4a86-8023-4716-93ef-b28b563e1a41,2026-02-04,small_paper_bag,packaging,-1,replacement,,2026-02-23T07:13:42.925287+00:00
+c24134fd-644c-4ef9-a556-9be5b4c6a807,2026-02-10,BFLV_100J,sku,-1,giveaway,Dad's social media team,2026-02-23T07:13:42.925287+00:00
+f663a49f-11b7-4615-b47d-0641ab2e7c89,2026-01-26,small_paper_bag,packaging,-1,order_fulfillment,,2026-02-23T07:13:42.925287+00:00
+24fd162d-f51e-4f04-bcd3-ec2a6e078c0e,2026-02-23,small_paper_bag,packaging,-1,order_fulfillment,,2026-02-23T07:13:42.925287+00:00

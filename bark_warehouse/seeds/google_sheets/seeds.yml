@@ -33,7 +33,7 @@ seeds:
         order_timestamp: text
         customer_name: text
         purchase_id: text
-        purchase_source: text
+        purchase_type: text
         quantity: text
         payment_date: text
         payment_method: text
@@ -66,7 +66,7 @@ seeds:
         internal_uuid: text
         movement_date: text
         item_name: text
-        item_source: text
+        item_type: text
         quantity_change: text
         movement_type: text
         notes: text
@@ -102,7 +102,7 @@ seeds:
         order_date: text
         customer_username: text
         purchase_id: text
-        purchase_source: text
+        purchase_type: text
         quantity: text
         buyer_paid_amount: text
         gross_revenue: text
