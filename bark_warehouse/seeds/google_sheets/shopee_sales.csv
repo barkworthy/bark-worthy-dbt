@@ -1,8 +1,8 @@
-internal_uuid,order_id,order_date,customer_username,purchase_id,purchase_source,quantity,buyer_paid_amount,gross_revenue,voucher,fees_and_charges,net_revenue,processed_at
+internal_uuid,order_id,order_date,customer_username,purchase_id,purchase_type,quantity,buyer_paid_amount,gross_revenue,voucher,fees_and_charges,net_revenue,processed_at
 62e4e0cd-cc2a-4cb9-b3cf-a93513509d60,1,2026-01-27,tedjarvis,BFLV_100J,sku,1,480,480,0,61.11,418.89,2026-02-19T16:05:23.350017+00:00
 20fd6c8a-8842-4e0d-beaa-8df8e5093817,2,2026-02-02,ansonvillegas,BFLV_100J,sku,1,348,450,30,34.94,385.06,2026-02-19T16:05:23.350017+00:00
 701fe8c7-4391-450d-8e80-d540b27fe72f,3,2026-02-03,peep.sy,BFLV_100J,sku,3,1100,1350,50,107.99,1192.01,2026-02-19T16:05:23.350017+00:00
 5d0f84a7-944d-4ccd-9251-3964debcb186,4,2026-02-07,sms_agent,BFLV_100J,sku,1,450,450,0,37.08,412.92,2026-02-19T16:05:23.350017+00:00
 5eaf8e3c-9060-4445-8dbe-5c44767c113c,5,2026-02-10,jerickbonamy,BFLV_100J,sku,3,1250,1350,100,103.76,1146.24,2026-02-19T16:05:23.350017+00:00
 9d1e29a1-5b1f-4bae-86cc-484fa97bbbae,6,2026-02-16,fluysipuo,BFLV_100J,sku,1,360,450,90,37.08,412.92,2026-02-19T16:05:23.350017+00:00
-7637cf33-b959-4881-92c4-8e5e048654e5,8,2026-02-22,fluysipuo,plastic_tongs,operating_expense,1,0,0,0,0,0,2026-02-22T15:52:20.174128+00:00
+7637cf33-b959-4881-92c4-8e5e048654e5,8,2026-02-22,fluysipuo,plastic_tongs,freebie,1,0,0,0,0,0,2026-02-22T15:52:20.174128+00:00

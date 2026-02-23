@@ -89,3 +89,26 @@ jobs:
               --profiles-dir ../.ci \
               --target ci
           fi
+      - name: Debug failing accepted_values rows
+        if: failure()
+        run: |
+          cd bark_warehouse
+
+          echo "=== Invalid product_type values in CI ==="
+
+          dbt run-operation run_query \
+            --profiles-dir ../.ci \
+            --target ci \
+            --args '{
+              "sql": "
+                select
+                  product_type,
+                  length(product_type) as len,
+                  count(*) as row_count
+                from {{ ref(\"stg_google_sheets__creator_seedings\") }}
+                where product_type not in (''sku'',''freebie'')
+                  or product_type is null
+                group by 1,2
+                order by row_count desc
+              "
+            }'

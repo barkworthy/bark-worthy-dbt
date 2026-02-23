@@ -18,12 +18,12 @@ models:
       - name: purchase_id
         tests:
           - not_null
-      - name: purchase_source
+      - name: purchase_type
         tests:
           - not_null
           - accepted_values:
               arguments:
-                values: ['sku', 'operating_expense']
+                values: ['sku', 'freebie']
       - name: quantity
         tests:
           - not_null

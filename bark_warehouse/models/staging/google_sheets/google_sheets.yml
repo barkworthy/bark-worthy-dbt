@@ -9,7 +9,7 @@ sources:
       - name: direct_sales
       - name: ingredients
       - name: inventory_movement
-      - name: operating_expenses
+      - name: non_sku_purchases
       - name: order_freebies
       - name: shopee_sales
       - name: sku_components
@@ -52,6 +52,17 @@ models:
               arguments:
                 to: ref('stg_google_sheets__sku_versions')
                 field: sku_id
+                where: "product_type = 'sku'"
+          - relationships:
+              arguments:
+                to: ref('stg_google_sheets__non_sku_purchases')
+                field: purchase_name
+                where: "product_type = 'freebie'"
+      - name: product_type
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['sku', 'freebie']
       - name: delivery_date
       - name: first_post_date
       - name: num_static_posts
@@ -108,18 +119,18 @@ models:
               arguments:
                 to: ref('stg_google_sheets__sku_versions')
                 field: sku_id
-                where: "purchase_source = 'sku'"
+                where: "purchase_type = 'sku'"
           - relationships:
               arguments:
-                to: ref('stg_google_sheets__operating_expenses')
+                to: ref('stg_google_sheets__non_sku_purchases')
                 field: purchase_name
-                where: "purchase_source = 'operating_expense'"
-      - name: purchase_source
+                where: "purchase_type = 'freebie'"
+      - name: purchase_type
         tests:
           - not_null
           - accepted_values:
               arguments:
-                values: ['sku', 'operating_expense']
+                values: ['sku', 'freebie']
       - name: quantity
       - name: payment_date
       - name: payment_method
@@ -189,18 +200,18 @@ models:
               arguments:
                 to: ref('stg_google_sheets__sku_versions')
                 field: sku_id
-                where: "item_source = 'sku'"
+                where: "item_type = 'sku'"
           - relationships:
               arguments:
-                to: ref('stg_google_sheets__operating_expenses')
+                to: ref('stg_google_sheets__non_sku_purchases')
                 field: purchase_name
-                where: "item_source = 'operating_expense'"
-      - name: item_source
+                where: "item_type != 'sku'"
+      - name: item_type
         tests:
           - not_null
           - accepted_values:
               arguments:
-                values: ['sku', 'operating_expense']
+                values: ['sku', 'packaging', 'freebie']
       - name: quantity_change
         tests:
           - not_null
@@ -209,10 +220,10 @@ models:
           - not_null
           - accepted_values:
               arguments:
-                values: ['replacement', 'giveaway', 'seeding']
+                values: ['replacement', 'giveaway', 'seeding', 'order_fulfillment']
       - name: notes
       - name: processed_at
-  - name: stg_google_sheets__operating_expenses
+  - name: stg_google_sheets__non_sku_purchases
     description: ""
     columns:
       - name: expense_id
@@ -224,6 +235,19 @@ models:
       - name: purchase_name
         tests:
           - not_null
+      - name: purchase_type
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values:
+                  - 'packaging'
+                  - 'freebie'
+                  - 'utilities'
+                  - 'regulatory'
+                  - 'equipment'
+                  - 'logistics'
+                  - 'software'
       - name: price
         tests:
           - not_null
@@ -267,7 +291,7 @@ models:
           - not_null
           - relationships:
               arguments:
-                to: ref('stg_google_sheets__operating_expenses')
+                to: ref('stg_google_sheets__non_sku_purchases')
                 field: purchase_name
       - name: quantity
         tests:
@@ -293,23 +317,22 @@ models:
           - not_null
       - name: purchase_id
         tests:
-          - not_null
           - relationships:
               arguments:
                 to: ref('stg_google_sheets__sku_versions')
                 field: sku_id
-                where: "purchase_source = 'sku'"
+                where: "purchase_type = 'sku'"
           - relationships:
               arguments:
-                to: ref('stg_google_sheets__sku_versions')
+                to: ref('stg_google_sheets__non_sku_purchases')
                 field: purchase_name
-                where: "purchase_source = 'operating_expense'"
-      - name: purchase_source
+                where: "purchase_type = 'freebie'"
+      - name: purchase_type
         tests:
           - not_null
           - accepted_values:
               arguments:
-                values: ['sku', 'operating_expense']
+                values: ['sku', 'freebie']
       - name: quantity
         tests:
           - not_null
