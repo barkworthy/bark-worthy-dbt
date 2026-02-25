@@ -1,6 +1,6 @@
 
 name: 'bark_warehouse'
-version: '1.4.0'
+version: '1.4.1'
 
 # This setting configures which "profile" dbt uses for this project.
 profile: 'bark_warehouse'
@@ -33,7 +33,6 @@ models:
       +schema: intermediate
     marts:
       +materialized: table
-      +schema: public
 
 seeds:
   bark_warehouse:
