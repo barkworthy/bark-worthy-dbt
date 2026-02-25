@@ -45,3 +45,8 @@ models:
         description: Total number of freebie units included in the order.
       - name: num_freebie_types
         description: Number of distinct freebie product types included in the order.
+      - name: is_new_order
+        descrption: >
+          Boolean. Indicates whether the order is the customer's first order.
+          Derived using customer_name and customer_source. Cancelled orders are excluded
+          from sequencing logic.
