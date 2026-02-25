@@ -1,6 +1,6 @@
 
 name: 'bark_warehouse'
-version: '1.4.1'
+version: '1.5.0'
 
 # This setting configures which "profile" dbt uses for this project.
 profile: 'bark_warehouse'
@@ -19,9 +19,8 @@ clean-targets:         # directories to be removed by `dbt clean`
   - "target"
   - "dbt_packages"
 
-# In this example config, we tell dbt to build all models in the example/
-# directory as views. These settings can be overridden in the individual model
-# files using the `{{ config(...) }}` macro.
+# Global config for all models in folder. Can be overridden in the
+# individual model files using the `{{ config(...) }}` macro.
 models:
   bark_warehouse:
     # Config indicated by + and applies to all files under models/example/

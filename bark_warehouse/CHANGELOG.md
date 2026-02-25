@@ -1,5 +1,8 @@
 # Changelog
 
+## v1.5.0
+- added is_new_order to fact_orders
+
 ## v1.4.1
 - fixed schema bug for marts tables.
 
