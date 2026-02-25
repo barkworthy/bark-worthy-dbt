@@ -1,6 +1,6 @@
 select      order_id,
 			order_source,
-			order_date,
+			order_timestamp,
 			customer_name,
 			cancel_date,
 			sum(quantity) filter (where purchase_type = 'sku') 					as purchased_quantity,
@@ -11,6 +11,6 @@ select      order_id,
 from        {{ ref('fact_orders_line_items') }}
 group by 	order_id,
 			order_source,
-			order_date,
+			order_timestamp,
 			customer_name,
 			cancel_date
