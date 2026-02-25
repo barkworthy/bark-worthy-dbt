@@ -1,5 +1,8 @@
 # Changelog
 
+## v1.4.1
+- fixed schema bug for marts tables.
+
 ## v1.4.0
 - added fact_orders and fact_orders_line_items
 - changed int_orders_line_items.order_date to order_timestamp
