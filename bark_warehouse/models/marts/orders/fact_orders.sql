@@ -19,7 +19,7 @@ base as (
 				cancel_date
 ),
 
-is_repeat_order as (
+is_new_order as (
 	select 		order_id,
 				order_source,
 				customer_name,
@@ -32,6 +32,6 @@ is_repeat_order as (
 )
 
 select 		b.*,
-			r.is_repeat_order
+			n.is_new_order
 from 		base b
-			left join is_repeat_order r on b.order_id = r.order_id and r.order_source = b.order_source
+			left join is_new_order n on b.order_id = n.order_id and n.order_source = b.order_source
