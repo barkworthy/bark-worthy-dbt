@@ -1,0 +1,47 @@
+version: 2
+
+models:
+
+  - name: fact_orders_line_items
+    description: >
+      "Contains one row per order line item across all sales channels.
+      Includes all orders including unfulfilled and cancelled."
+    columns:
+      - name: order_id
+      - name: order_source
+      - name: order_timestamp
+      - name: customer_name
+      - name: purchase_id
+      - name: purchase_type
+      - name: quantity
+      - name: net_revenue
+      - name: cancel_date
+  - name: fact_orders
+    description: ""
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns:
+              - order_source
+              - order_id
+    columns:
+      - name: order_id
+        description: Unique identifier of the order.
+      - name: order_source
+        description: Source platform where the order was placed (e.g. Shopee, direct).
+      - name: order_timestamp
+        description: Timestamp the order was created on the source platform.
+      - name: customer_name
+        description: Customer name associated with the order.
+      - name: cancel_date
+        description: Date the order was cancelled, if applicable. Null for completed orders.
+      - name: purchased_quantity
+        description: Total number of SKU units purchased in the order, excluding freebies.
+      - name: num_purchase_types
+        description: Number of distinct SKU product types purchased in the order.
+      - name: total_net_revenue
+        description: Total net revenue from SKU items in the order, excluding freebies and non-revenue items.
+      - name: freebies_quantity
+        description: Total number of freebie units included in the order.
+      - name: num_freebie_types
+        description: Number of distinct freebie product types included in the order.

@@ -1,6 +1,6 @@
-select 		order_id, 
+select 		order_id,
 			'shopee' as order_source,
-			order_date, 
+			order_date::timestamp as order_timestamp,
 			customer_username as customer_name,
 			purchase_id,
 			purchase_type,
@@ -9,11 +9,11 @@ select 		order_id,
 			null as cancel_date
 from 		{{ ref('stg_google_sheets__shopee_sales') }}
 
-union all 
+union all
 
 select 		order_id,
 			'direct' as order_source,
-			order_timestamp::date as order_date,
+			order_timestamp,
 			customer_name,
 			purchase_id,
 			purchase_type,

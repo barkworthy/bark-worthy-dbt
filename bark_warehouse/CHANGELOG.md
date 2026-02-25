@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.4.0
+- added fact_orders and fact_orders_line_items
+- changed int_orders_line_items.order_date to order_timestamp
+
 ## v1.3.0
 - changed operating_expenses to non_sku_purchases
 - changed purchase_source and item_source columns to purchase_type and item_type
