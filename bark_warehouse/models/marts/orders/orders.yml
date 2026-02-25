@@ -20,9 +20,10 @@ models:
     description: ""
     tests:
       - dbt_utils.unique_combination_of_columns:
-          combination_of_columns:
-            - order_source
-            - order_id
+          arguments:
+            combination_of_columns:
+              - order_source
+              - order_id
     columns:
       - name: order_id
         description: Unique identifier of the order.
