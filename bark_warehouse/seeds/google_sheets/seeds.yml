@@ -179,7 +179,6 @@ seeds:
         order_id: text
         purchase_name: text
         purchase_type: text
-        num_boxes: text
         units_received: text
         intl_forwarder_paid_date: text
         intl_forwarder_company: text

@@ -574,7 +574,6 @@ models:
           - accepted_values:
               arguments:
                 values: ['sample', 'sku']
-      - name: num_boxes
       - name: units_received
       - name: intl_forwarder_paid_date
       - name: intl_forwarder_company

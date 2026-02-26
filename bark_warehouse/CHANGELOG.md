@@ -1,5 +1,8 @@
 # Changelog
 
+## v1.7.0
+- removed num_boxes from stg_google_sheets__supplier_order_shipments
+
 ## v1.6.0
 - added dim_customers
 - added is_valid_orders to fact_orders
