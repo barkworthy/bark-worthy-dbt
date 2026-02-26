@@ -1,2 +1,2 @@
 select      *
-from        {{ ref('int_orders_line_items') }}
+from        {{ ref('int_order_line_items') }}

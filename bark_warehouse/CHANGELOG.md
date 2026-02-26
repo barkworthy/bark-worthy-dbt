@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.7.0
+- changed int_orders_line_items to int_order_line_items
+- changed fact_orders_line_items to fact_order_line_items
+
 ## v1.6.0
 - added dim_customers
 - added is_valid_orders to fact_orders

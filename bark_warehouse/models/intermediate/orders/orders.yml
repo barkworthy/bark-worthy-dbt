@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: int_orders_line_items
+  - name: int_order_line_items
     description: >
       "Contains one row per order line item across all sales channels.
       Includes all orders including unfulfilled and cancelled."
