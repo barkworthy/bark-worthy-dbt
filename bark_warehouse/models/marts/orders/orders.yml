@@ -10,6 +10,7 @@ models:
       - name: order_id
       - name: order_source
       - name: order_timestamp
+      - name: payment_date
       - name: customer_name
       - name: purchase_id
       - name: purchase_type
@@ -31,6 +32,10 @@ models:
         description: Source platform where the order was placed (e.g. Shopee, direct).
       - name: order_timestamp
         description: Timestamp the order was created on the source platform.
+      - name: payment_date
+        description: .
+          Date when payment for the order was received. For direct orders, this is
+          manually inputted. For Shopee orders, it is derived using order_timestamp as proxy
       - name: customer_name
         description: Customer name associated with the order.
       - name: cancel_date
@@ -48,5 +53,11 @@ models:
       - name: is_new_order
         descrption: >
           Boolean. Indicates whether the order is the customer's first order.
-          Derived using customer_name and customer_source. Cancelled orders are excluded
-          from sequencing logic.
+          Derived using customer_name and customer_source. Only applies to orders where
+          is_valid_order = true. Null for invalid orders.
+      - name: is_valid_order
+        description: >
+          Boolean. Indicates whether order went through. Requires payment_date to not be null
+          and for cancel_date to be null.
+        tests:
+          - not_null

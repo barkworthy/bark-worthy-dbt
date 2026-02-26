@@ -24,6 +24,15 @@ models:
       - name: order_timestamp
         tests:
           - not_null
+      - name: payment_date
+        description: >
+          Date when payment for the order was received. For direct orders, this is
+          manually inputted. For Shopee orders, it is derived using order_timestamp as proxy
+        tests:
+          - dbt_utils.expression_is_true:
+              arguments:
+                expression: "is not null"
+                where: "order_source = 'shopee'"
       - name: customer_name
         tests:
           - not_null
