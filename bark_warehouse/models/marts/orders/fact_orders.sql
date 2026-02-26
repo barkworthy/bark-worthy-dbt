@@ -3,12 +3,12 @@ with
 base as (
 	select      order_id,
 				order_source,
-				order_timestamp,
-				payment_date,
+				ordered_timestamp,
+				paid_date,
 				customer_name,
-				cancel_date,
+				cancelled_date,
 				case
-					when payment_date is not null and cancel_date is null then TRUE
+					when paid_date is not null and cancelled_date is null then TRUE
 					else FALSE
 				end as is_valid_order,
 				sum(quantity) filter (where purchase_type = 'sku') 					as purchased_quantity,
@@ -19,10 +19,10 @@ base as (
 	from        {{ ref('fact_order_line_items') }}
 	group by 	order_id,
 				order_source,
-				order_timestamp,
-				payment_date,
+				ordered_timestamp,
+				paid_date,
 				customer_name,
-				cancel_date
+				cancelled_date
 ),
 
 is_new_order as (

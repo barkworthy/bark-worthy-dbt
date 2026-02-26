@@ -1,6 +1,6 @@
 select      internal_uuid,
             nullif(trim(order_id),'')::int                  as order_id,
-            nullif(trim(order_date),'')::date               as order_date,
+            nullif(trim(ordered_date),'')::date             as ordered_date,
             nullif(lower(trim(customer_username)),'')       as customer_username,
             nullif(trim(purchase_id),'')                    as purchase_id,
             nullif(lower(trim(purchase_type)),'')           as purchase_type,

@@ -1,6 +1,0 @@
-created_date,sku_id,sku_description,price,is_bundle,category,weight,packaging,internal_uuid,processed_at
-2025-12-13,BFLV_100J,1x Beef Liver 100g Jar,450,FALSE,treat,100,jar,026d182d-9808-4619-8826-d9372558fd94,2026-02-19T16:05:17.113571+00:00
-2026-01-22,CHBR_100J,1x Chicken Breast 100g Jar,,FALSE,treat,100,jar,9e136d06-bb72-4233-a373-53fd0bd944a9,2026-02-19T16:05:17.113571+00:00
-2026-01-22,PKTL_70J,1x Pork Tenderloin 70g Jar,,FALSE,treat,70,jar,1a47fbf1-9639-4606-8c7f-35d74c9ac419,2026-02-19T16:05:17.113571+00:00
-2026-01-22,SLMT_80J,1x Salmon Meat 80g Jar,,FALSE,treat,80,jar,619f7e4c-c2fc-4231-a49e-296cab416485,2026-02-19T16:05:17.113571+00:00
-2026-01-22,ASRT1_90J,"1x Assorted Beef Liver, Chicken Breast, Pork Tenderloin 90g Jar",,TRUE,treat,90,jar,5f4d2668-18e7-453e-94f9-9de63980f580,2026-02-19T16:05:17.113571+00:00

@@ -5,6 +5,7 @@ select      internal_uuid,
             nullif(lower(trim(purchase_type)),'')   as purchase_type,
             nullif(trim(price),'')::float           as price,
             nullif(trim(quantity),'')::smallint     as quantity,
+            nullif(trim(delivered_date),'')::date   as delivered_date,
             nullif(trim(notes),'')                  as notes,
             processed_at::timestamp
 from        {{ source('google_sheets', 'non_sku_purchases') }}

@@ -1,3 +1,3 @@
-internal_uuid,sku_id,min_quantity,max_quantity,total_price,price_type,start_date,processed_at
+internal_uuid,sku_id,min_quantity,max_quantity,total_price,price_type,effective_from,processed_at
 0d7a77d3-1a06-47b1-bae4-80c41235ef1c,BFLV_100J,1,1,450,srp,2025-12-13,2026-02-21T18:04:29.257107+00:00
 f922bff4-671a-439c-b00a-ede8757166e5,BFLV_100J,2,2,800,srp,2025-12-13,2026-02-21T18:04:29.257107+00:00

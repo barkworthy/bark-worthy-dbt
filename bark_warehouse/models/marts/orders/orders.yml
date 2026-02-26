@@ -9,14 +9,14 @@ models:
     columns:
       - name: order_id
       - name: order_source
-      - name: order_timestamp
-      - name: payment_date
+      - name: ordered_timestamp
+      - name: paid_date
       - name: customer_name
       - name: purchase_id
       - name: purchase_type
       - name: quantity
       - name: net_revenue
-      - name: cancel_date
+      - name: cancelled_date
   - name: fact_orders
     description: ""
     tests:
@@ -30,15 +30,15 @@ models:
         description: Unique identifier of the order.
       - name: order_source
         description: Source platform where the order was placed (e.g. Shopee, direct).
-      - name: order_timestamp
+      - name: ordered_timestamp
         description: Timestamp the order was created on the source platform.
-      - name: payment_date
+      - name: paid_date
         description: .
           Date when payment for the order was received. For direct orders, this is
           manually inputted. For Shopee orders, it is derived using order_timestamp as proxy
       - name: customer_name
         description: Customer name associated with the order.
-      - name: cancel_date
+      - name: cancelled_date
         description: Date the order was cancelled, if applicable. Null for completed orders.
       - name: purchased_quantity
         description: Total number of SKU units purchased in the order, excluding freebies.

@@ -3,13 +3,12 @@ with
 base as (
 	select 		customer_name,
 				order_source as source, 
-				count(distinct order_id) filter (where cancel_date is null) as lifetime_num_orders,
-				sum(total_net_revenue) filter (where cancel_date is null) as lifetime_revenue,
-				min(order_timestamp) filter (where cancel_date is null) as first_order_timestamp,
-				max(order_timestamp) filter (where cancel_date is null) as last_order_timestamp
+				count(distinct order_id) as lifetime_num_orders,
+				sum(total_net_revenue) as lifetime_revenue,
+				min(ordered_timestamp) as first_order_timestamp,
+				max(ordered_timestamp) as last_order_timestamp
 	from 		{{ ref('fact_orders') }}
-	where 		cancel_date is null
-                and payment_date is not null
+	where 		is_valid_order
 	group by 	1,2
 ),
 
