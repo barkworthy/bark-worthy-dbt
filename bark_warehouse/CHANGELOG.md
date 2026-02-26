@@ -1,5 +1,8 @@
 # Changelog
 
+## v1.6.0
+- added dim_customers
+
 ## v1.5.0
 - added is_new_order to fact_orders
 

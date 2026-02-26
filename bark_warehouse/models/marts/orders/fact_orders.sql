@@ -4,8 +4,13 @@ base as (
 	select      order_id,
 				order_source,
 				order_timestamp,
+				payment_date,
 				customer_name,
 				cancel_date,
+				case
+					when payment_date is not null and cancel_date is null then TRUE
+					else FALSE
+				end as is_valid_order,
 				sum(quantity) filter (where purchase_type = 'sku') 					as purchased_quantity,
 				count(purchase_id) filter (where purchase_type = 'sku') 			as num_purchase_types,
 				sum(net_revenue) filter (where purchase_type = 'sku') 				as total_net_revenue,
@@ -15,6 +20,7 @@ base as (
 	group by 	order_id,
 				order_source,
 				order_timestamp,
+				payment_date,
 				customer_name,
 				cancel_date
 ),
@@ -28,7 +34,7 @@ is_new_order as (
 					else FALSE
 				end as is_new_order
 	from 		base
-	where 		cancel_date is null
+	where 		is_valid_order
 )
 
 select 		b.*,
