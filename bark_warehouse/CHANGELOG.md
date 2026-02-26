@@ -1,5 +1,12 @@
 # Changelog
 
+## v1.9.0
+- added delivered_date to non_sku_purchases
+- deleted sku_versions and collapsed into sku_components
+- changed all transaction timestamps to past tense
+- changed sku_components.parent_sku_id to sku_id
+- changed sku_pricing.start_date to effective_from
+
 ## v1.8.0
 - removed num_boxes from stg_google_sheets__supplier_order_shipments
 

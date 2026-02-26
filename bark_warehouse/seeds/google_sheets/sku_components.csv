@@ -1,8 +1,8 @@
-parent_sku_id,component_code,component_type,component_unit,component_value,internal_uuid,processed_at
-BFLV_100J,BFLV,ingredient,gram,100,c50262ae-01ab-4c48-a384-f6a754280fbc,2026-02-21T16:31:23.852288+00:00
-CHBR_100J,CHBR,ingredient,gram,100,e78f3404-0cb7-417d-a85c-10c494ddb22f,2026-02-21T16:31:23.852288+00:00
-PKTL_70J,PKTL,ingredient,gram,70,befd1bb4-41ed-4925-b837-a99f36347884,2026-02-21T16:31:23.852288+00:00
-SLMT_80J,SLMT,ingredient,gram,80,1b226d68-c06d-4185-957a-c1bb99df82a2,2026-02-21T16:31:23.852288+00:00
-ASRT1_90J,BFLV,ingredient,gram,30,1d2d306e-7ffc-439c-909f-1e1d06216bbf,2026-02-21T16:31:23.852288+00:00
-ASRT1_90J,CHBR,ingredient,gram,30,56888693-6c6f-49ad-be41-51f0b927971b,2026-02-21T16:31:23.852288+00:00
-ASRT1_90J,PKTL,ingredient,gram,30,e4e3ab86-6151-43ea-83d7-d1aa25e2e0f9,2026-02-21T16:31:23.852288+00:00
+sku_id,component_code,sku_category,sku_description,component_type,packaging,component_unit,component_value,internal_uuid,processed_at
+BFLV_100J,BFLV,treat,1x Beef Liver 100g Jar,ingredient,jar,gram,100,c50262ae-01ab-4c48-a384-f6a754280fbc,2026-02-21T16:31:23.852288+00:00
+CHBR_100J,CHBR,treat,1x Chicken Breast 100g Jar,ingredient,jar,gram,100,e78f3404-0cb7-417d-a85c-10c494ddb22f,2026-02-21T16:31:23.852288+00:00
+PKTL_70J,PKTL,treat,1x Pork Tenderloin 70g Jar,ingredient,jar,gram,70,befd1bb4-41ed-4925-b837-a99f36347884,2026-02-21T16:31:23.852288+00:00
+SLMT_80J,SLMT,treat,1x Salmon Meat 80g Jar,ingredient,jar,gram,80,1b226d68-c06d-4185-957a-c1bb99df82a2,2026-02-21T16:31:23.852288+00:00
+ASRT1_90J,BFLV,treat,"1x Assorted Beef Liver, Chicken Breast, Pork Tenderloin 90g Jar",ingredient,jar,gram,30,1d2d306e-7ffc-439c-909f-1e1d06216bbf,2026-02-21T16:31:23.852288+00:00
+ASRT1_90J,CHBR,treat,"1x Assorted Beef Liver, Chicken Breast, Pork Tenderloin 90g Jar",ingredient,jar,gram,30,56888693-6c6f-49ad-be41-51f0b927971b,2026-02-21T16:31:23.852288+00:00
+ASRT1_90J,PKTL,treat,"1x Assorted Beef Liver, Chicken Breast, Pork Tenderloin 90g Jar",ingredient,jar,gram,30,e4e3ab86-6151-43ea-83d7-d1aa25e2e0f9,2026-02-21T16:31:23.852288+00:00

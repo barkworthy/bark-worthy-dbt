@@ -4,6 +4,6 @@ select      internal_uuid,
             nullif(trim(max_quantity),'')::smallint as max_quantity,
             nullif(trim(total_price),'')::smallint  as total_price,
             nullif(lower(trim(price_type)),'')      as price_type,
-            nullif(trim(start_date),'')::date       as start_date,
+            nullif(trim(effective_from),'')::date   as effective_from,
             processed_at::timestamp
 from        {{ source('google_sheets', 'sku_pricing') }}

@@ -21,13 +21,13 @@ models:
           - accepted_values:
               arguments:
                 values: ['shopee', 'direct']
-      - name: order_timestamp
+      - name: ordered_timestamp
         tests:
           - not_null
-      - name: payment_date
+      - name: paid_date
         description: >
           Date when payment for the order was received. For direct orders, this is
-          manually inputted. For Shopee orders, it is derived using order_timestamp as proxy
+          manually inputted. For Shopee orders, it is derived using ordered_timestamp as proxy
         tests:
           - dbt_utils.expression_is_true:
               arguments:

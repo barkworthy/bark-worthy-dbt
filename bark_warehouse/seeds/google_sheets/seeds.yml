@@ -10,11 +10,11 @@ seeds:
         platform: text
         handle: text
         initiation_direction: text
-        first_message_date: text
+        first_contacted_date: text
         product_id_sent: text
         product_type: text
-        delivery_date: text
-        first_post_date: text
+        delivered_date: text
+        first_posted_date: text
         num_static_posts: text
         num_short_form_videos: text
         num_ephemeral: text
@@ -31,21 +31,21 @@ seeds:
       column_types:
         internal_uuid: text
         order_id: text
-        order_timestamp: text
+        ordered_timestamp: text
         customer_name: text
         purchase_id: text
         purchase_type: text
         quantity: text
-        payment_date: text
+        paid_date: text
         payment_method: text
         price_at_purchase: text
         price_adjustment_reason: text
         platform: text
         delivery_method: text
-        delivery_date: text
+        delivered_date: text
         delivery_fee: text
         delivery_address: text
-        cancel_date: text
+        cancelled_date: text
         notes: text
         processed_at: text
 
@@ -82,6 +82,7 @@ seeds:
         purchase_type: text
         price: text
         quantity: text
+        deliver_date: text
         notes: text
         internal_uuid: text
         processed_at: text
@@ -101,7 +102,7 @@ seeds:
       column_types:
         internal_uuid: text
         order_id: text
-        order_date: text
+        ordered_date: text
         customer_username: text
         purchase_id: text
         purchase_type: text
@@ -116,9 +117,12 @@ seeds:
   - name: sku_components
     config:
       column_types:
-        parent_sku_id: text
+        sku_id: text
         component_code: text
+        sku_category: text
+        sku_description: text
         component_type: text
+        packaging_type: text
         component_unit: text
         component_value: text
         internal_uuid: text
@@ -133,21 +137,7 @@ seeds:
         max_quantity: text
         total_price: text
         price_type: text
-        start_date: text
-        processed_at: text
-
-  - name: sku_versions
-    config:
-      column_types:
-        created_date: text
-        sku_id: text
-        sku_description: text
-        price: text
-        is_bundle: text
-        category: text
-        weight: text
-        packaging: text
-        internal_uuid: text
+        effective_from: text
         processed_at: text
 
   - name: supplier_order_line_items

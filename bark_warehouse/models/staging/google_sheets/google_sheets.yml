@@ -14,7 +14,6 @@ sources:
       - name: shopee_sales
       - name: sku_components
       - name: sku_pricing
-      - name: sku_versions
       - name: supplier_order_line_items
       - name: supplier_order_shipments
 
@@ -45,12 +44,12 @@ models:
           - accepted_values:
               arguments:
                 values: ['outbound', 'inbound']
-      - name: first_message_date
+      - name: first_contacted_date
       - name: product_id_sent
         tests:
           - relationships:
               arguments:
-                to: ref('stg_google_sheets__sku_versions')
+                to: ref('stg_google_sheets__sku_components')
                 field: sku_id
                 where: "product_type = 'sku'"
           - relationships:
@@ -63,8 +62,8 @@ models:
           - accepted_values:
               arguments:
                 values: ['sku', 'freebie']
-      - name: delivery_date
-      - name: first_post_date
+      - name: delivered_date
+      - name: first_posted_date
       - name: num_static_posts
       - name: num_short_form_videos
       - name: num_ephemeral
@@ -97,6 +96,7 @@ models:
       - name: processed_at
         tests:
           - not_null
+
   - name: stg_google_sheets__direct_sales
     description: ""
     columns:
@@ -107,7 +107,7 @@ models:
       - name: order_id
         tests:
           - not_null
-      - name: order_timestamp
+      - name: ordered_timestamp
         tests:
           - not_null
       - name: customer_name
@@ -117,7 +117,7 @@ models:
         tests:
           - relationships:
               arguments:
-                to: ref('stg_google_sheets__sku_versions')
+                to: ref('stg_google_sheets__sku_components')
                 field: sku_id
                 where: "purchase_type = 'sku'"
           - relationships:
@@ -132,7 +132,7 @@ models:
               arguments:
                 values: ['sku', 'freebie']
       - name: quantity
-      - name: payment_date
+      - name: paid_date
       - name: payment_method
         tests:
           - accepted_values:
@@ -150,12 +150,13 @@ models:
           - accepted_values:
               arguments:
                 values: ['courier', 'free_delivery', 'in_person', 'pick_up']
-      - name: delivery_date
+      - name: delivered_date
       - name: delivery_fee
       - name: delivery_address
-      - name: cancel_date
+      - name: cancelled_date
       - name: notes
       - name: processed_at
+
   - name: stg_google_sheets__ingredients
     description: ""
     columns:
@@ -183,6 +184,7 @@ models:
       - name: processed_at
         tests:
           - not_null
+
   - name: stg_google_sheets__inventory_movement
     description: ""
     columns:
@@ -198,7 +200,7 @@ models:
           - not_null
           - relationships:
               arguments:
-                to: ref('stg_google_sheets__sku_versions')
+                to: ref('stg_google_sheets__sku_components')
                 field: sku_id
                 where: "item_type = 'sku'"
           - relationships:
@@ -223,6 +225,7 @@ models:
                 values: ['replacement', 'giveaway', 'seeding', 'order_fulfillment']
       - name: notes
       - name: processed_at
+
   - name: stg_google_sheets__non_sku_purchases
     description: ""
     columns:
@@ -252,6 +255,7 @@ models:
         tests:
           - not_null
       - name: quantity
+      - name: delivered_date
       - name: notes
       - name: internal_uuid
         tests:
@@ -260,6 +264,7 @@ models:
       - name: processed_at
         tests:
           - not_null
+
   - name: stg_google_sheets__order_freebies
     description: ""
     columns:
@@ -299,6 +304,7 @@ models:
       - name: processed_at
         tests:
           - not_null
+
   - name: stg_google_sheets__shopee_sales
     description: ""
     columns:
@@ -309,7 +315,7 @@ models:
       - name: order_id
         tests:
           - not_null
-      - name: order_date
+      - name: ordered_date
         tests:
           - not_null
       - name: customer_username
@@ -319,7 +325,7 @@ models:
         tests:
           - relationships:
               arguments:
-                to: ref('stg_google_sheets__sku_versions')
+                to: ref('stg_google_sheets__sku_components')
                 field: sku_id
                 where: "purchase_type = 'sku'"
           - relationships:
@@ -354,16 +360,13 @@ models:
       - name: processed_at
         tests:
           - not_null
+
   - name: stg_google_sheets__sku_components
     description: ""
     columns:
-      - name: parent_sku_id
+      - name: sku_id
         tests:
           - not_null
-          - relationships:
-              arguments:
-                to: ref('stg_google_sheets__sku_versions')
-                field: sku_id
       - name: component_code
         tests:
           - not_null
@@ -374,15 +377,30 @@ models:
                 where: "component_type = 'ingredient'"
           - relationships:
               arguments:
-                to: ref('stg_google_sheets__sku_versions')
+                to: ref('stg_google_sheets__sku_components')
                 field: sku_id
                 where: "component_type = 'sku'"
+      - name: sku_category
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['treat']
+      - name: sku_description
+        tests:
+          - not_null
       - name: component_type
         tests:
           - not_null
           - accepted_values:
               arguments:
                 values: ['ingredient', 'sku']
+      - name: packaging_type
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['jar', 'pouch']
       - name: component_unit
         tests:
           - accepted_values:
@@ -398,6 +416,7 @@ models:
       - name: processed_at
         tests:
           - not_null
+
   - name: stg_google_sheets__sku_pricing
     description: ""
     columns:
@@ -410,7 +429,7 @@ models:
           - not_null
           - relationships:
               arguments:
-                to: ref('stg_google_sheets__sku_versions')
+                to: ref('stg_google_sheets__sku_components')
                 field: sku_id
       - name: min_quantity
         tests:
@@ -425,53 +444,13 @@ models:
           - accepted_values:
               arguments:
                 values: ['srp']
-      - name: start_date
+      - name: effective_from
         tests:
           - not_null
       - name: processed_at
         tests:
           - not_null
-  - name: stg_google_sheets__sku_versions
-    description: ""
-    columns:
-      - name: created_date
-        tests:
-          - not_null
-      - name: sku_id
-        tests:
-          - not_null
-      - name: sku_description
-        tests:
-          - not_null
-      - name: price
-      - name: is_bundle
-        tests:
-          - not_null
-          - accepted_values:
-              arguments:
-                values: ['TRUE', 'FALSE']
-      - name: category
-        tests:
-          - not_null
-          - accepted_values:
-              arguments:
-                values: ['treat']
-      - name: weight
-        tests:
-          - not_null
-      - name: packaging
-        tests:
-          - not_null
-          - accepted_values:
-              arguments:
-                values: ['jar', 'pouch']
-      - name: internal_uuid
-        tests:
-          - not_null
-          - unique
-      - name: processed_at
-        tests:
-          - not_null
+
   - name: stg_google_sheets__supplier_order_line_items
     description: ""
     columns:
@@ -495,7 +474,7 @@ models:
                 where: "purchase_type = 'ingredient'"
           - relationships:
               arguments:
-                to: ref('stg_google_sheets__sku_versions')
+                to: ref('stg_google_sheets__sku_components')
                 field: sku_id
                 where: "purchase_type = 'sku'"
       - name: purchase_type
@@ -538,6 +517,7 @@ models:
       - name: processed_at
         tests:
           - not_null
+
   - name: stg_google_sheets__supplier_order_shipments
     description: ""
     columns:
@@ -565,7 +545,7 @@ models:
                 where: "purchase_type = 'ingredient'"
           - relationships:
               arguments:
-                to: ref('stg_google_sheets__sku_versions')
+                to: ref('stg_google_sheets__sku_components')
                 field: sku_id
                 where: "purchase_type = 'sku'"
       - name: purchase_type

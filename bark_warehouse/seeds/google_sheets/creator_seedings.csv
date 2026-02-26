@@ -1,4 +1,4 @@
-internal_uuid,seeding_id,platform,handle,initiation_direction,first_message_date,product_id_sent,product_type,delivery_date,first_post_date,num_static_posts,num_short_form_videos,num_ephemeral,pinned_content,post_effort_level,support_level,posted_after_initial,sent_raw_footage,notes,processed_at
+internal_uuid,seeding_id,platform,handle,initiation_direction,first_contacted_date,product_id_sent,product_type,delivered_date,first_posted_date,num_static_posts,num_short_form_videos,num_ephemeral,pinned_content,post_effort_level,support_level,posted_after_initial,sent_raw_footage,notes,processed_at
 9385423d-f1b0-401b-a879-f80fb4c94711,1,instagram,vanityfurph,outbound,2026-01-31,,,,,,,,,,,,,,2026-02-21T18:02:05.302772+00:00
 cc939210-e59a-4ffc-a2f4-29fb09f0dd99,2,instagram,wizofpawspetsalon,outbound,,,,,,,,,,,,,,not receiving messages,2026-02-21T18:02:05.302772+00:00
 d8c7aac1-25b6-4b68-b205-9c00eaa9d30b,3,instagram,poochpurrfectph,outbound,2026-01-31,,,,,,,,,,,,,,2026-02-21T18:02:05.302772+00:00
