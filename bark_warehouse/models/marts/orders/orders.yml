@@ -53,5 +53,11 @@ models:
       - name: is_new_order
         descrption: >
           Boolean. Indicates whether the order is the customer's first order.
-          Derived using customer_name and customer_source. Cancelled orders are excluded
-          from sequencing logic.
+          Derived using customer_name and customer_source. Only applies to orders where
+          is_valid_order = true. Null for invalid orders.
+      - name: is_valid_order
+        description: >
+          Boolean. Indicates whether order went through. Requires payment_date to not be null
+          and for cancel_date to be null.
+        tests:
+          - not_null
