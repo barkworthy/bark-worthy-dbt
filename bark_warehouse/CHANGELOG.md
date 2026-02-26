@@ -1,5 +1,8 @@
 # Changelog
 
+## v1.8.0
+- removed num_boxes from stg_google_sheets__supplier_order_shipments
+
 ## v1.7.0
 - changed int_orders_line_items to int_order_line_items
 - changed fact_orders_line_items to fact_order_line_items
