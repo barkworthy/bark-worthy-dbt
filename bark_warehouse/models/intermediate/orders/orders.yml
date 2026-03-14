@@ -1,10 +1,12 @@
 version: 2
 
 models:
-  - name: int_order_line_items
+  - name: int_order_line_items_base
     description: >
-      "Contains one row per order line item across all sales channels.
-      Includes all orders including unfulfilled and cancelled."
+      "Raw unified order line items combining direct sales and Shopee sales.
+      This model standardizes the column schema across sources while preserving
+      source-specific semantics. Minimal transformation is applied; normalization
+      and business logic should occur in downstream intermediate or mart models."
     tests:
       - dbt_utils.unique_combination_of_columns:
           arguments:
