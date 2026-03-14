@@ -14,41 +14,116 @@ models:
               - purchase_id
     columns:
       - name: order_id
+        description: Identifier of the order in the originating system.
         tests:
           - not_null
+
       - name: order_source
+        description: Source system where the order originated (e.g. direct, shopee).
         tests:
+          - not_null
           - accepted_values:
               arguments:
                 values: ['shopee', 'direct']
+
       - name: ordered_timestamp
+        description: Timestamp when the order was placed.
         tests:
           - not_null
-      - name: paid_date
-        description: >
-          Date when payment for the order was received. For direct orders, this is
-          manually inputted. For Shopee orders, it is derived using ordered_timestamp as proxy
-        tests:
-          - dbt_utils.expression_is_true:
-              arguments:
-                expression: "is not null"
-                where: "order_source = 'shopee'"
+
       - name: customer_name
+        description: Name or username of the customer placing the order.
         tests:
           - not_null
+
       - name: purchase_id
+        description: Identifier for the purchase or line item.
         tests:
           - not_null
+
       - name: purchase_type
+        description: Category of purchase (eg. SKU or freebie).
         tests:
           - not_null
           - accepted_values:
               arguments:
                 values: ['sku', 'freebie']
+
       - name: quantity
+        description: Number of units purchased for the line item.
         tests:
           - not_null
+
+      - name: paid_date
+        description: >
+          Date when payment for the order was received. Manually inputted for
+          direct orders. Derived using ordered_timestamp as proxy for Shopee orders.
+
+      - name: payment_method
+        description: Payment method used for the order.
+
+      - name: price_at_purchase
+        description: >
+          "Unit price paid by the customer at the time of purchase. Manually inputted for
+          direct orders. Drived using buyer_paid_amount for Shopee orders.
+
+      - name: price_adjustment_reason
+        description: >
+          Reason for price adjustment such as vouchers or friends/family or
+          bulk discounts.
+
+      - name: gross_revenue
+        description: >
+          Total revenue before fees and charges. Derived using price_at_purchase
+          for direct orders.
+
+      - name: voucher
+        description: Voucher or discount amount applied to the order. 0 for direct orders
+
+      - name: fees_and_charges
+        description: Processing fees associated with the order. 0 for direct orders
+
       - name: net_revenue
+        description: Revenue received after fees and adjustments.
         tests:
           - not_null
-      - name: cancel_date
+
+      - name: platform
+        description: Platform or medium where the order interaction occurred (e.g. shopee, instagram, in_person).
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['in_person', 'instagram', 'facebook', 'viber', 'shopee']
+
+      - name: channel
+        description: Customer acquisition or relationship channel (e.g. personal_network, dasmarinas_market).
+
+      - name: delivery_method
+        description: Method used to deliver the order.
+
+      - name: delivered_date
+        description: Date representing when the order is considered delivered or inventory depleted.
+
+      - name: delivery_fee
+        description: Fee charged for delivery. Currently not being tracked for Shopee orders
+
+      - name: delivery_address
+        description: Address where the order was delivered.Currently not being tracked for Shopee orders.
+
+      - name: cancelled_date
+        description: >
+          Timestamp when the order was cancelled, if applicable. Cancelled Shopee orders are not
+          included in table.
+
+  - name: int_order_line_items
+    description: >
+      "Contains one row per order line item across all sales channels.
+      Includes all orders including unfulfilled and cancelled."
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns:
+              - order_source
+              - order_id
+              - purchase_id

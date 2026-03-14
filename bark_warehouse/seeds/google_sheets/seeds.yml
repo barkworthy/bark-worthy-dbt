@@ -41,6 +41,7 @@ seeds:
         price_at_purchase: text
         price_adjustment_reason: text
         platform: text
+        channel: text
         delivery_method: text
         delivered_date: text
         delivery_fee: text
@@ -85,16 +86,6 @@ seeds:
         deliver_date: text
         notes: text
         internal_uuid: text
-        processed_at: text
-
-  - name: order_freebies
-    config:
-      column_types:
-        internal_uuid: text
-        order_id: text
-        order_source: text
-        freebie_name: text
-        quantity: text
         processed_at: text
 
   - name: shopee_sales
