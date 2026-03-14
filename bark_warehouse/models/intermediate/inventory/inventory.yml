@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: int_inventory_incoming
+  - name: int_inventory_in
     description: >
       Captures all inventory entering the business.
       Each row represents a received inventory event for a specific item,
@@ -64,5 +64,50 @@ models:
         description: >
           Date the inventory was received and became available for use or sale.
           Used as the inventory movement date for stock-in events.
+        tests:
+          - not_null
+
+  - name: int_inventory_out
+    description: >
+      Inventory outflow events representing product units leaving available inventory.
+      This model consolidates three sources of stock depletion:
+      valid customer orders, manual inventory movements (e.g. giveaways, replacements),
+      and creator seeding shipments.
+
+      Each row represents a quantity of a specific item leaving inventory on a given date.
+
+    columns:
+
+      - name: source_id
+        description: Identifier from the originating source record
+        tests:
+          - not_null
+
+      - name: item_source
+        description: >
+          Source type that generated the inventory movement.
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['creator_seedings', 'inventory_movements', 'shopee', 'direct']
+
+      - name: item_name
+        description: Identifier of the product or item leaving inventory
+        tests:
+          - not_null
+
+      - name: item_type
+        description: Product category or type associated with the item being removed from inventory.
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['sku', 'freebie']
+
+      - name: quantity
+        description: Number of units leaving inventory
+      - name: movement_date
+        description: Date representing when the inventory movement occurred
         tests:
           - not_null
