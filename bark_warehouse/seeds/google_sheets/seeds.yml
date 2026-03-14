@@ -154,7 +154,6 @@ seeds:
         original_order_total_cost: text
         original_order_currency: text
         converted_order_cost_php: text
-        supplier_shipped_date: text
         supplier_name: text
         supplier_contact: text
         rejects: text

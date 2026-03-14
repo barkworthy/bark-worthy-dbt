@@ -505,7 +505,6 @@ models:
               arguments:
                 values: ['USD', 'PHP']
       - name: converted_order_cost_php
-      - name: supplier_shipped_date
       - name: supplier_name
         tests:
           - not_null
