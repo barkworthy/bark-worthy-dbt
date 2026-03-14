@@ -66,6 +66,7 @@ seeds:
     config:
       column_types:
         internal_uuid: text
+        movement_id: text
         movement_date: text
         item_name: text
         item_type: text
