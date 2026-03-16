@@ -196,7 +196,7 @@ models:
         tests:
           - not_null
           - unique
-      - name: movement_id,
+      - name: movement_id
         tests:
           - not_null
       - name: movement_date

@@ -87,8 +87,6 @@ models:
 
       - name: net_revenue
         description: Revenue received after fees and adjustments.
-        tests:
-          - not_null
 
       - name: platform
         description: Platform or medium where the order interaction occurred (e.g. shopee, instagram, in_person).

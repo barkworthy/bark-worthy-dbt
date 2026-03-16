@@ -84,7 +84,7 @@ seeds:
         purchase_type: text
         price: text
         quantity: text
-        deliver_date: text
+        delivered_date: text
         notes: text
         internal_uuid: text
         processed_at: text
