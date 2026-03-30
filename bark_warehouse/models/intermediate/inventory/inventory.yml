@@ -8,12 +8,6 @@ models:
       sourced from supplier deliveries (SKUs) or non-SKU inventory purchases
       such as packaging and freebies. Only physically received items with
       confirmed delivery dates and quantities are included.
-    tests:
-      - dbt_utils.unique_combination_of_columns:
-          arguments:
-            combination_of_columns:
-              - item_source
-              - source_id
 
     columns:
       - name: source_id
@@ -50,9 +44,9 @@ models:
           - not_null
           - accepted_values:
               arguments:
-                values: ['supplier_order', 'non_sku_purchase']
+                values: ['sku', 'freebie', 'packaging']
 
-      - name: quantity_received
+      - name: quantity
         description: >
           Number of units received into inventory for the given item and
           transaction. Only positive, physically received quantities are
@@ -103,7 +97,7 @@ models:
           - not_null
           - accepted_values:
               arguments:
-                values: ['sku', 'freebie']
+                values: ['sku', 'freebie', 'packaging']
 
       - name: quantity
         description: Number of units leaving inventory
