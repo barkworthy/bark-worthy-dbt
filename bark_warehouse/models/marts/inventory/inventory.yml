@@ -1,0 +1,60 @@
+version: 2
+
+models:
+  - name: fct_inventory_stock
+    description: >
+      Running inventory balance per item based on ordered inventory movements.
+
+    columns:
+
+      - name: source_id
+        description: Identifier of the originating transaction.
+        tests:
+          - not_null
+
+      - name: item_source
+        description: Origin/type of the movement.
+        tests:
+          - not_null
+
+      - name: item_name
+        description: Inventory item identifier.
+        tests:
+          - not_null
+
+      - name: item_type
+        description: Category of the inventory item.
+        tests:
+          - not_null
+
+      - name: quantity
+        description: Signed movement quantity.
+        tests:
+          - not_null
+
+      - name: movement_date
+        description: Timestamp of movement used for ordering.
+        tests:
+          - not_null
+
+      - name: inventory_stock
+        description: >
+          Cumulative stock balance per item_name and item_type,
+          ordered by movement_date, item_source, and source_id.
+        tests:
+          - not_null
+
+    tests:
+      # Ensures no duplication leaks into the fact layer
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - source_id
+            - item_source
+            - item_name
+            - item_type
+            - movement_date
+
+      # Stock sanity check (adjust severity based on business rules)
+      - dbt_utils.expression_is_true:
+          expression: "inventory_stock >= 0"
+          severity: warn

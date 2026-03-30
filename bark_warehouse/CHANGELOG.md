@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.11.0
+- added int_inventory_movements
+- added fact_inventory_stock
+
 ## v1.10.0
 - removed order_freebies
 - added inventory tables
