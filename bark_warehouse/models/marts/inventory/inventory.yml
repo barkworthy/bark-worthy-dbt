@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: fct_inventory_stock
+  - name: fact_inventory_stock
     description: >
       Running inventory balance per item based on ordered inventory movements.
 
@@ -47,14 +47,16 @@ models:
     tests:
       # Ensures no duplication leaks into the fact layer
       - dbt_utils.unique_combination_of_columns:
-          combination_of_columns:
-            - source_id
-            - item_source
-            - item_name
-            - item_type
-            - movement_date
+          arguments:
+            combination_of_columns:
+              - source_id
+              - item_source
+              - item_name
+              - item_type
+              - movement_date
 
       # Stock sanity check (adjust severity based on business rules)
       - dbt_utils.expression_is_true:
-          expression: "inventory_stock >= 0"
-          severity: warn
+          arguments:
+            expression: "inventory_stock >= 0"
+            severity: warn

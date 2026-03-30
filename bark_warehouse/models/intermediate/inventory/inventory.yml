@@ -155,9 +155,10 @@ models:
     tests:
       # Protects against duplicate ingestion / union-all duplication
       - dbt_utils.unique_combination_of_columns:
-          combination_of_columns:
-            - source_id
-            - item_source
-            - item_name
-            - item_type
-            - movement_date
+          arguments:
+            combination_of_columns:
+              - source_id
+              - item_source
+              - item_name
+              - item_type
+              - movement_date
