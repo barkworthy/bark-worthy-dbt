@@ -37,3 +37,4 @@ select 		seeding_id as item_id,
 			1 as quantity,
 			delivered_date as movement_date
 from 		{{ ref('stg_google_sheets__creator_seedings') }}
+where 		delivered_date is not null
