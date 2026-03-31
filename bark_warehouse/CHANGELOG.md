@@ -1,5 +1,8 @@
 # Changelog
 
+## v1.11.0
+- updates profiles.yml
+
 ## v1.10.0
 - removed order_freebies
 - added inventory tables
