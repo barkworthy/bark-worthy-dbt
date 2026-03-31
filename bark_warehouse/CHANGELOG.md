@@ -1,5 +1,8 @@
 # Changelog
 
+## v1.10.0
+- updates profiles.yml
+
 ## v1.9.0
 - added delivered_date to non_sku_purchases
 - deleted sku_versions and collapsed into sku_components
