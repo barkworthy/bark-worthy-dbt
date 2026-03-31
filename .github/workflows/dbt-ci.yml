@@ -94,7 +94,7 @@ jobs:
           echo "=== FAILING INVENTORY ROWS ==="
           psql -h localhost -U testuser -d testdb -c "
           select item_name, item_type, movement_date, inventory_stock
-          from cicd.fact_inventory_stock
+          from public.fact_inventory_stock
           where inventory_stock < 0
           order by movement_date;
           "
