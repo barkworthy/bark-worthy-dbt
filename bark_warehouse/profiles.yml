@@ -7,7 +7,7 @@ bark_warehouse:
       password: "{{ env_var('POSTGRES_PASSWORD') }}"
       port: 5432
       dbname: "{{ env_var('POSTGRES_DB') }}"
-      schema: public
+      schema: dev
     ci:
       type: postgres
       host: localhost
@@ -15,6 +15,14 @@ bark_warehouse:
       password: testpass
       port: 5432
       dbname: testdb
-      schema: public
+      schema: cicd
       threads: 4
+    prod:
+      type: postgres
+      host: localhost
+      user: "{{ env_var('POSTGRES_USER') }}"
+      password: "{{ env_var('POSTGRES_PASSWORD') }}"
+      port: 5432
+      dbname: "{{ env_var('POSTGRES_DB') }}"
+      schema: public
   target: dev

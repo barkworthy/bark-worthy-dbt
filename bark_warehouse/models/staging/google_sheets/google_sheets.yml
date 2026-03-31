@@ -258,6 +258,8 @@ models:
                   - 'equipment'
                   - 'logistics'
                   - 'software'
+                  - 'events'
+                  - 'marketing'
       - name: price
         tests:
           - not_null
@@ -519,7 +521,7 @@ models:
           - not_null
           - accepted_values:
               arguments:
-                values: ['sample', 'sku']
+                values: ['sample', 'sku', 'ingredient']
       - name: units_received
       - name: intl_forwarder_paid_date
       - name: intl_forwarder_company
