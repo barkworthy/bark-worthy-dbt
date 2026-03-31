@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.12.0
+- added int_inventory_movements
+- added fact_inventory_stock
+
 ## v1.11.0
 - updates profiles.yml
 
