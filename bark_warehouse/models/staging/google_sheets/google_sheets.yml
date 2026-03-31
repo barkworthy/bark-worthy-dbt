@@ -10,7 +10,6 @@ sources:
       - name: ingredients
       - name: inventory_movement
       - name: non_sku_purchases
-      - name: order_freebies
       - name: shopee_sales
       - name: sku_components
       - name: sku_pricing
@@ -144,7 +143,12 @@ models:
         tests:
           - accepted_values:
               arguments:
-                values: ['in_person', 'instagram', 'messenger', 'viber']
+                values: ['in_person', 'instagram', 'facebook', 'viber']
+      - name: channel
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['facebook_marketplace', 'dasmarinas_marketplace', 'personal_network']
       - name: delivery_method
         tests:
           - accepted_values:
@@ -192,6 +196,9 @@ models:
         tests:
           - not_null
           - unique
+      - name: movement_id
+        tests:
+          - not_null
       - name: movement_date
         tests:
           - not_null
@@ -261,46 +268,6 @@ models:
         tests:
           - not_null
           - unique
-      - name: processed_at
-        tests:
-          - not_null
-
-  - name: stg_google_sheets__order_freebies
-    description: ""
-    columns:
-      - name: internal_uuid
-        tests:
-          - not_null
-          - unique
-      - name: order_id
-        tests:
-          - not_null
-          - relationships:
-              arguments:
-                to: ref('stg_google_sheets__shopee_sales')
-                field: order_id
-                where: "order_source = 'shopee'"
-          - relationships:
-              arguments:
-                to: ref('stg_google_sheets__direct_sales')
-                field: order_id
-                where: "order_source = 'direct'"
-      - name: order_source
-        tests:
-          - not_null
-          - accepted_values:
-              arguments:
-                values: ['shopee', 'direct', 'lazada', 'tiktok']
-      - name: freebie_name
-        tests:
-          - not_null
-          - relationships:
-              arguments:
-                to: ref('stg_google_sheets__non_sku_purchases')
-                field: purchase_name
-      - name: quantity
-        tests:
-          - not_null
       - name: processed_at
         tests:
           - not_null
@@ -505,7 +472,6 @@ models:
               arguments:
                 values: ['USD', 'PHP']
       - name: converted_order_cost_php
-      - name: supplier_shipped_date
       - name: supplier_name
         tests:
           - not_null

@@ -41,6 +41,7 @@ seeds:
         price_at_purchase: text
         price_adjustment_reason: text
         platform: text
+        channel: text
         delivery_method: text
         delivered_date: text
         delivery_fee: text
@@ -65,6 +66,7 @@ seeds:
     config:
       column_types:
         internal_uuid: text
+        movement_id: text
         movement_date: text
         item_name: text
         item_type: text
@@ -82,19 +84,9 @@ seeds:
         purchase_type: text
         price: text
         quantity: text
-        deliver_date: text
+        delivered_date: text
         notes: text
         internal_uuid: text
-        processed_at: text
-
-  - name: order_freebies
-    config:
-      column_types:
-        internal_uuid: text
-        order_id: text
-        order_source: text
-        freebie_name: text
-        quantity: text
         processed_at: text
 
   - name: shopee_sales
@@ -154,7 +146,6 @@ seeds:
         original_order_total_cost: text
         original_order_currency: text
         converted_order_cost_php: text
-        supplier_shipped_date: text
         supplier_name: text
         supplier_contact: text
         rejects: text

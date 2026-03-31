@@ -1,7 +1,14 @@
 # Changelog
 
-## v1.10.0
+## v1.11.0
 - updates profiles.yml
+
+## v1.10.0
+- removed order_freebies
+- added inventory tables
+- restructured orders tables
+- added int_order_line_items_base
+- added movement_id to inventory_movement
 
 ## v1.9.0
 - added delivered_date to non_sku_purchases

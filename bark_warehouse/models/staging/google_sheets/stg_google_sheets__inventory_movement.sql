@@ -1,4 +1,5 @@
 select      internal_uuid,
+            nullif(trim(movement_id),'')::int           as movement_id,
             nullif(trim(movement_date),'')::date        as movement_date,
             nullif(trim(item_name),'')                  as item_name,
             nullif(trim(lower(item_type)),'')           as item_type,
