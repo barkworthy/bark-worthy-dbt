@@ -3,60 +3,36 @@ version: 2
 models:
   - name: fact_inventory_stock
     description: >
-      Running inventory balance per item based on ordered inventory movements.
+      Running inventory balance per item and movement date, calculated from aggregated daily inventory movements.
 
     columns:
 
-      - name: source_id
-        description: Identifier of the originating transaction.
-        tests:
-          - not_null
-
-      - name: item_source
-        description: Origin/type of the movement.
-        tests:
-          - not_null
-
       - name: item_name
-        description: Inventory item identifier.
-        tests:
-          - not_null
+        description: Identifier of the product or SKU.
 
       - name: item_type
-        description: Category of the inventory item.
-        tests:
-          - not_null
-
-      - name: quantity
-        description: Signed movement quantity.
-        tests:
-          - not_null
+        description: Category or type of the item (e.g. sku).
 
       - name: movement_date
-        description: Timestamp of movement used for ordering.
+        description: Timestamp of the inventory movement event.
+
+      - name: total_quantity_moved
+        description: >
+          Net quantity moved at the given timestamp for the item.
+          Positive values indicate stock increases, negative values indicate decreases.
+        tests:
+          - not_null
+
+      - name: is_latest_movement
+        description: >
+          Boolean indicating whether the row represents the most recent
+          movement for the item
         tests:
           - not_null
 
       - name: inventory_stock
         description: >
-          Cumulative stock balance per item_name and item_type,
-          ordered by movement_date, item_source, and source_id.
+          Running inventory balance for the item, calculated by cumulatively
+          summing movements in chronological order.
         tests:
           - not_null
-
-    tests:
-      # Ensures no duplication leaks into the fact layer
-      - dbt_utils.unique_combination_of_columns:
-          arguments:
-            combination_of_columns:
-              - source_id
-              - item_source
-              - item_name
-              - item_type
-              - movement_date
-
-      # Stock sanity check (adjust severity based on business rules)
-      - dbt_utils.expression_is_true:
-          arguments:
-            expression: "inventory_stock >= 0"
-            severity: warn

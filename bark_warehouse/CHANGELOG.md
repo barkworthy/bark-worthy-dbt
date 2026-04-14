@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.14.0
+- changed fact_inventory_stock to be inventory/day level instead of inventory/movement/day level
+- added is_latest_movement
+
 ## v1.13.0
 - changed int_order_line_items_base to int_order_line_items_sources_unified
 
