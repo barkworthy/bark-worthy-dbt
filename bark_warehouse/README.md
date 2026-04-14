@@ -1,5 +1,5 @@
 To load the env file
-    source ~/Desktop/Bark-Worthy/infra/.env
+    source /mnt/c/Users/maddie/Desktop/Bark-Worthy/infra/.env
 
 To generate models
     dbt run
@@ -12,3 +12,9 @@ To test models
         additional tags:
             --select or -s
             --target
+
+To bring you to /Bark-Worthy
+    cd (without anything else)
+
+To activate virtual environment
+    source .venv/bin/activate
