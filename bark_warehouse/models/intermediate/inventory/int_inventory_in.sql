@@ -1,12 +1,12 @@
 with 
 
 delivered_shipments as (
-	select 		order_id as source_id,
+	select 		order_id 		 as source_id,
 				'supplier_order' as item_source,
-				purchase_name as item_name,
-				purchase_type as item_type,
-				units_received as quantity,
-				delivered_date as movement_date
+				purchase_name    as item_name,
+				purchase_type 	 as item_type,
+				units_received 	 as quantity,
+				delivered_date 	 as movement_date
 	from 		{{ ref('stg_google_sheets__supplier_order_shipments') }}
 	where 		purchase_type = 'sku'
 				and delivered_date is not null

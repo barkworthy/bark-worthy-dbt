@@ -1,5 +1,8 @@
 # Changelog
 
+## v1.13.0
+- changed int_order_line_items_base to int_order_line_items_sources_unified
+
 ## v1.12.0
 - added int_inventory_movements
 - added fact_inventory_stock

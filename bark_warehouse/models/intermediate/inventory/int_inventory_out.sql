@@ -9,10 +9,10 @@ valid_orders as (
 	where 		is_valid_order
 )
 
-select 		o.order_id as source_id,
-			o.order_source as item_source,
-			l.purchase_id as item_name,
-			l.purchase_type as item_type,
+select 		o.order_id 		 as source_id,
+			o.order_source 	 as item_source,
+			l.purchase_id 	 as item_name,
+			l.purchase_type  as item_type,
 			l.quantity,
 			o.delivered_date as movement_date
 from 		valid_orders o 
