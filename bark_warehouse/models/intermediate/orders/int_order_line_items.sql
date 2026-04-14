@@ -3,4 +3,4 @@ select 		order_id,
 			purchase_id,
 			purchase_type,
 			quantity
-from 		{{ ref('int_order_line_items_base') }}
+from 		{{ ref('int_order_line_items_sources_unified') }}
