@@ -1,5 +1,8 @@
 # Changelog
 
+## v1.15.0
+- added event_transactions table
+
 ## v1.14.0
 - changed fact_inventory_stock to be inventory/day level instead of inventory/movement/day level
 - added is_latest_movement

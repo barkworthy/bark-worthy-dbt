@@ -1,0 +1,76 @@
+internal_uuid,transaction_id,event_date,event_name,event_type,event_location,transaction_type,customer_name,customer_contact,customer_address,purchase_id,purchase_type,quantity,price,payment_method,notes,processed_at
+1a8cef93-e80f-40c7-bc80-2e11c79375bc,1,2026-03-15,Dog Lovers Meet & Greet,community_event,dasmarinas_village,giveaway,Nia Yang,,2388 Paraiso,BFLV_100J,sku,1,0,,,2026-05-12T08:24:38.295135+00:00
+4d52423f-4c74-4e28-b812-df63a7b9e7b2,2,2026-03-15,Dog Lovers Meet & Greet,community_event,dasmarinas_village,giveaway,Rossana Ong,,1982 Kalachuchi,BFLV_100J,sku,1,0,,,2026-05-12T08:24:38.295135+00:00
+945b3051-d7be-4cdf-acef-f29a164c0e64,3,2026-03-15,Dog Lovers Meet & Greet,community_event,dasmarinas_village,giveaway,Lucille Carlos,,2404 Mabolo,BFLV_100J,sku,1,0,,,2026-05-12T08:24:38.295135+00:00
+acf277bc-80e4-44f1-8d93-7dc704c90852,4,2026-03-15,Dog Lovers Meet & Greet,community_event,dasmarinas_village,giveaway,Rosanna Angelos,,1750 Palomadia,BFLV_100J,sku,1,0,,,2026-05-12T08:24:38.295135+00:00
+5eefa4dd-73f0-45ea-83e8-6381bc772261,5,2026-03-15,Dog Lovers Meet & Greet,community_event,dasmarinas_village,giveaway,Annie,,1323 Gloriosa,BFLV_100J,sku,1,0,,,2026-05-12T08:24:38.295135+00:00
+2e8d8522-3068-453a-a734-7d7e7f2be3ce,6,2026-03-15,Dog Lovers Meet & Greet,community_event,dasmarinas_village,giveaway,Ga Jose,,1668 Dasmarinas Ave,BFLV_100J,sku,1,0,,,2026-05-12T08:24:38.295135+00:00
+748cf1d6-4b9a-4607-a1a1-8c86ea0e3a6c,7,2026-03-15,Dog Lovers Meet & Greet,community_event,dasmarinas_village,giveaway,Travis Chang,,2399 Bouganvilla,BFLV_100J,sku,1,0,,,2026-05-12T08:24:38.295135+00:00
+73f44b09-d7e7-4998-bbfc-07c01e8cc265,8,2026-03-15,Dog Lovers Meet & Greet,community_event,dasmarinas_village,giveaway,Ricardo Padilla,,1678 Dasmarinas Ave,BFLV_100J,sku,1,0,,,2026-05-12T08:24:38.295135+00:00
+e482f4de-d720-4588-a754-b0458408ae84,9,2026-03-15,Dog Lovers Meet & Greet,community_event,dasmarinas_village,giveaway,Dilij B,,2150 Paraiso,BFLV_100J,sku,1,0,,,2026-05-12T08:24:38.295135+00:00
+d6300e11-b827-4c72-a663-9a7743c858ae,10,2026-03-15,Dog Lovers Meet & Greet,community_event,dasmarinas_village,giveaway,Sain B,,2050 Paraiso,BFLV_100J,sku,1,0,,,2026-05-12T08:24:38.295135+00:00
+a00e4ecd-d4f1-4602-b5f3-e24832d75d21,11,2026-03-15,Dog Lovers Meet & Greet,community_event,dasmarinas_village,giveaway,Lindsey C,,1343 Mahogany,BFLV_100J,sku,1,0,,,2026-05-12T08:24:38.295135+00:00
+39b21d75-564b-4555-9bf7-cdda5cb0784d,12,2026-03-15,Dog Lovers Meet & Greet,community_event,dasmarinas_village,giveaway,Jose Pantang,,4908 Pasay,BFLV_100J,sku,1,0,,,2026-05-12T08:24:38.295135+00:00
+d4b40dfc-d247-4b3b-9b89-8b4e1ea427f3,13,2026-03-15,Dog Lovers Meet & Greet,community_event,dasmarinas_village,giveaway,Taj Ma,,4917 Pasay,BFLV_100J,sku,1,0,,,2026-05-12T08:24:38.295135+00:00
+3e24fdef-23f5-4c9e-860e-d1b80f7e6dbb,14,2026-03-15,Dog Lovers Meet & Greet,community_event,dasmarinas_village,giveaway,Cri Gamboa,,1533 Calamansi,BFLV_100J,sku,1,0,,,2026-05-12T08:24:38.295135+00:00
+df074346-cbde-45fb-ab34-58d7bebd55b6,15,2026-03-15,Dog Lovers Meet & Greet,community_event,dasmarinas_village,giveaway,Gier Esparogoza,,1466 Calumpang,BFLV_100J,sku,1,0,,,2026-05-12T08:24:38.295135+00:00
+7204186b-8bd4-4127-a326-e673d9d21d76,16,2026-03-15,Dog Lovers Meet & Greet,community_event,dasmarinas_village,giveaway,Imelda Tagong,,1475 Calumpang,BFLV_100J,sku,1,0,,,2026-05-12T08:24:38.295135+00:00
+8399d95d-f869-4a1b-832a-062ce09466e5,17,2026-03-15,Dog Lovers Meet & Greet,community_event,dasmarinas_village,giveaway,Ceyeglang,,1839 Santan,BFLV_100J,sku,1,0,,,2026-05-12T08:24:38.295135+00:00
+939ea01a-7e7e-4736-bb8b-00140cadb778,18,2026-03-15,Dog Lovers Meet & Greet,community_event,dasmarinas_village,giveaway,Ernie Pantangco,,1319 Gloriosa,BFLV_100J,sku,1,0,,,2026-05-12T08:24:38.295135+00:00
+d6e81ad6-42e8-4ee4-b95a-b7eadfc8b2e6,19,2026-03-15,Dog Lovers Meet & Greet,community_event,dasmarinas_village,giveaway,Ernie Pantangco,,4908 Pasay,BFLV_100J,sku,1,0,,,2026-05-12T08:24:38.295135+00:00
+c0fb8411-f5f7-4ed4-bab2-6433280368af,20,2026-03-15,Dog Lovers Meet & Greet,community_event,dasmarinas_village,giveaway,Michelle Keng,,1907 Sineguelas,BFLV_100J,sku,1,0,,,2026-05-12T08:24:38.295135+00:00
+c4cf25f0-f972-427b-82b2-63d335254123,21,2026-03-15,Dog Lovers Meet & Greet,community_event,dasmarinas_village,sale,,09778098175,,BFLV_100J,sku,2,800,"gcash, cash",,2026-05-12T08:24:38.295135+00:00
+e71f50ba-c45c-45b9-a5de-c9c558f8682b,22,2026-03-15,Dog Lovers Meet & Greet,community_event,dasmarinas_village,sale,,0917534,,BFLV_100J,sku,2,800,gcash,,2026-05-12T08:24:38.295135+00:00
+0dbbcf6b-411d-4a64-8de8-f5b362f5253b,23,2026-03-15,Dog Lovers Meet & Greet,community_event,dasmarinas_village,sale,,0917134,,BFLV_100J,sku,1,450,gcash,,2026-05-12T08:24:38.295135+00:00
+add7bc63-4af8-46ca-a2d4-1d1b93a51e9d,24,2026-03-15,Dog Lovers Meet & Greet,community_event,dasmarinas_village,sale,,,Tamarind,BFLV_100J,sku,1,450,cash,Swiss family. only paid 440,2026-05-12T08:24:38.295135+00:00
+2638eea7-f5a9-4f41-8ec0-8d30891e032f,25,2026-04-26,Mother's Day Market,bazaar,dasmarinas_village,sale,,,,ASRT1_90J,sku,1,475,gcash,,2026-05-12T08:24:38.295135+00:00
+ffa417c5-eab4-426c-b34d-eeaa2fef918d,26,2026-04-26,Mother's Day Market,bazaar,dasmarinas_village,sale,,,,ASRT1_90J,sku,1,475,cash,,2026-05-12T08:24:38.295135+00:00
+7c29d691-eaa2-431d-8134-a0a1aca36c07,27,2026-04-26,Mother's Day Market,bazaar,dasmarinas_village,sale,,,,PKTL_70J,sku,2,900,gcash,has 30 dogs. rescues,2026-05-12T08:24:38.295135+00:00
+b3cea0a9-57fa-4a47-9c3f-b75ed4dd19a1,28,2026-04-26,Mother's Day Market,bazaar,dasmarinas_village,sale,,,,ASRT1_90J,sku,1,475,gcash,,2026-05-12T08:24:38.295135+00:00
+6752fe3d-6287-4cc4-8f37-78b4f0d5806c,29,2026-04-26,Mother's Day Market,bazaar,dasmarinas_village,sale,Barbara Go,,,PKTL_70J,sku,2,4650,cash,offered to pay full,2026-05-12T08:24:38.295135+00:00
+5c8735a3-3c20-4e8d-8c41-086da49bc100,29,2026-04-26,Mother's Day Market,bazaar,dasmarinas_village,sale,Barbara Go,,,ASRT1_90J,sku,2,,,,2026-05-12T08:24:38.295135+00:00
+848cfa8f-620c-4607-a855-8ed47d8599c7,29,2026-04-26,Mother's Day Market,bazaar,dasmarinas_village,sale,Barbara Go,,,CHBR_100J,sku,2,,,,2026-05-12T08:24:38.295135+00:00
+21d5d485-a189-4108-9b99-1b12aa2deaf2,29,2026-04-26,Mother's Day Market,bazaar,dasmarinas_village,sale,Barbara Go,,,BFLV_100J,sku,2,,,,2026-05-12T08:24:38.295135+00:00
+48986138-fd7c-40cf-a34a-b6e769f85408,29,2026-04-26,Mother's Day Market,bazaar,dasmarinas_village,sale,Barbara Go,,,SLMT_80J,sku,2,,,,2026-05-12T08:24:38.295135+00:00
+ecd1bfbb-9d5c-4438-9394-328b7a87c85c,30,2026-04-26,Mother's Day Market,bazaar,dasmarinas_village,sale,,,,SLMT_80J,sku,1,825,gcash,,2026-05-12T08:24:38.295135+00:00
+f67da265-d846-441f-97ab-86d8cbc1cc6c,30,2026-04-26,Mother's Day Market,bazaar,dasmarinas_village,sale,,,,BFLV_100J,sku,1,,,,2026-05-12T08:24:38.295135+00:00
+6946af0c-fb87-42e8-bf53-8beaf8fb56ff,31,2026-04-26,Mother's Day Market,bazaar,dasmarinas_village,sale,,,,ASRT1_90J,sku,1,475,cash,,2026-05-12T08:24:38.295135+00:00
+9336c487-ec5c-4e8e-9d6d-ce9001fe8c36,32,2026-04-26,Mother's Day Market,bazaar,dasmarinas_village,sale,,,,ASRT1_90J,sku,2,850,gcash,,2026-05-12T08:24:38.295135+00:00
+1d4a8d6b-3de3-4f8e-8ed8-b90c50c6fc38,33,2026-04-26,Mother's Day Market,bazaar,dasmarinas_village,sale,,,,ASRT1_90J,sku,1,475,gcash,,2026-05-12T08:24:38.295135+00:00
+7a146d49-1a9c-48cd-aebe-b895006e4011,34,2026-04-26,Mother's Day Market,bazaar,dasmarinas_village,sale,,,,ASRT1_90J,sku,2,850,gcash,,2026-05-12T08:24:38.295135+00:00
+17d7886a-92d6-412b-929d-17fd57ecfddc,35,2026-04-26,Mother's Day Market,bazaar,dasmarinas_village,sale,Raymond Go,,,PKTL_70J,sku,1,2125,gcash,bought for our dogs,2026-05-12T08:24:38.295135+00:00
+6b75df9b-c1f5-4d18-aa6f-4cc34cbf0c42,35,2026-04-26,Mother's Day Market,bazaar,dasmarinas_village,sale,,,,ASRT1_90J,sku,1,,,,2026-05-12T08:24:38.295135+00:00
+1260b63b-96df-452e-81be-ae90975b93ac,35,2026-04-26,Mother's Day Market,bazaar,dasmarinas_village,sale,,,,CHBR_100J,sku,1,,,,2026-05-12T08:24:38.295135+00:00
+be9eee3e-0538-470f-a973-29e57f3dec12,35,2026-04-26,Mother's Day Market,bazaar,dasmarinas_village,sale,,,,BFLV_100J,sku,1,,,,2026-05-12T08:24:38.295135+00:00
+dd3e1417-42fd-448c-ab1d-a30c445093fe,35,2026-04-26,Mother's Day Market,bazaar,dasmarinas_village,sale,,,,SLMT_80J,sku,1,,,,2026-05-12T08:24:38.295135+00:00
+916ee0d0-2485-447b-8aae-3169187a429d,36,2026-04-26,Mother's Day Market,bazaar,dasmarinas_village,sale,,,,CHBR_100J,sku,1,800,gcash,already tried the beef liver before. trying new flavors,2026-05-12T08:24:38.295135+00:00
+caa5766f-1b1d-42a0-a4c0-6842603ff8cb,37,2026-04-26,Mother's Day Market,bazaar,dasmarinas_village,sale,,,,SLMT_80J,sku,1,,,,2026-05-12T08:24:38.295135+00:00
+0bae6f0c-65cd-41c2-aaa2-c7c04e89737b,38,2026-04-26,Mother's Day Market,bazaar,dasmarinas_village,sale,,,,BFLV_100J,sku,1,450,cash,,2026-05-12T08:24:38.295135+00:00
+d35516db-38b5-4973-848b-bb5eb4e77291,39,2026-04-26,Mother's Day Market,bazaar,dasmarinas_village,sale,,,,SLMT_80J,sku,1,475,gcash,buying for his cat,2026-05-12T08:24:38.295135+00:00
+bab52b7e-7c73-4bbb-89b8-b4e46c45b5c4,40,2026-05-01,Paws and Fiesta,bazaar,connecticut_arcade,sale,,,,ASRT1_90J,sku,1,475,gcash,,2026-05-12T08:24:38.295135+00:00
+28adf3c2-e8d7-489b-8ea0-fc4fc822de3e,41,2026-05-01,Paws and Fiesta,bazaar,connecticut_arcade,sale,,,,ASRT1_90J,sku,1,475,gcash,,2026-05-12T08:24:38.295135+00:00
+24cb9f9f-5f36-4874-b686-0a4f13b7bc33,42,2026-05-01,Paws and Fiesta,bazaar,connecticut_arcade,giveaway,,,,plastic_tongs,freebie,1,0,,,2026-05-12T08:24:38.295135+00:00
+ba7b8b11-b43a-4ff1-a55a-dc901f4ec2bb,43,2026-05-01,Paws and Fiesta,bazaar,connecticut_arcade,sale,,,,ASRT1_90J,sku,2,850,gcash,,2026-05-12T08:24:38.295135+00:00
+a6482052-82ec-4f6b-a655-e121a656d1f0,43,2026-05-01,Paws and Fiesta,bazaar,connecticut_arcade,giveaway,,,,plastic_tongs,freebie,1,0,,,2026-05-12T08:24:38.295135+00:00
+ef8194e4-7340-4158-a3d1-ad72c2fd38ea,44,2026-05-01,Paws and Fiesta,bazaar,connecticut_arcade,sale,,,,ASRT1_90J,sku,1,475,cash,,2026-05-12T08:24:38.295135+00:00
+9d556309-7f0d-4cdf-99fa-26b54ce66832,45,2026-05-01,Paws and Fiesta,bazaar,connecticut_arcade,sale,,,,ASRT1_90J,sku,1,475,cash,,2026-05-12T08:24:38.295135+00:00
+229a0d23-5f90-4ecc-b2aa-5b2c2a829926,46,2026-05-01,Paws and Fiesta,bazaar,connecticut_arcade,sale,,,,ASRT1_90J,sku,1,475,gcash,,2026-05-12T08:24:38.295135+00:00
+9c163300-800b-499e-b5af-188b0bca486a,46,2026-05-01,Paws and Fiesta,bazaar,connecticut_arcade,sale,,,,BFLV_100J,sku,1,450,gcash,,2026-05-12T08:24:38.295135+00:00
+2cdb3575-0646-4a47-a00e-3ecdcb0b7fd8,46,2026-05-01,Paws and Fiesta,bazaar,connecticut_arcade,sale,,,,plastic_tongs,freebie,1,0,,,2026-05-12T08:24:38.295135+00:00
+984e0b37-33b7-4e84-a1f1-e9779a08c3cc,47,2026-05-01,Paws and Fiesta,bazaar,connecticut_arcade,sale,,,,BFLV_100J,sku,1,1325,gcash,,2026-05-12T08:24:38.295135+00:00
+fd501d55-69cf-478d-a1e3-5519a686e213,47,2026-05-01,Paws and Fiesta,bazaar,connecticut_arcade,sale,,,,ASRT1_90J,sku,1,,,,2026-05-12T08:24:38.295135+00:00
+e5bb45a5-d121-49f2-8b71-d459126d6747,47,2026-05-01,Paws and Fiesta,bazaar,connecticut_arcade,sale,,,,PKTL_70J,sku,1,,,,2026-05-12T08:24:38.295135+00:00
+747fc270-5a62-4b7f-90a4-bbd5ec372577,47,2026-05-01,Paws and Fiesta,bazaar,connecticut_arcade,sale,,,,plastic_tongs,freebie,1,0,,,2026-05-12T08:24:38.295135+00:00
+cf5a68a5-977f-40ba-bd03-0794588fdc9e,48,2026-05-01,Paws and Fiesta,bazaar,connecticut_arcade,sale,,,,CHBR_100J,sku,1,425,gcash,,2026-05-12T08:24:38.295135+00:00
+48cefdfa-9260-405c-8d2b-ae73f76fd2ee,49,2026-05-01,Paws and Fiesta,bazaar,connecticut_arcade,sale,,,,ASRT1_90J,sku,1,475,cash,,2026-05-12T08:24:38.295135+00:00
+a633f1a7-2209-4f30-9e50-5b8f13d447ee,50,2026-05-02,Paws and Fiesta,bazaar,connecticut_arcade,sale,,,,ASRT1_90J,sku,1,850,gcash,,2026-05-12T08:24:38.295135+00:00
+336c58b8-5349-4da0-b1f2-3e82d67d4956,50,2026-05-02,Paws and Fiesta,bazaar,connecticut_arcade,sale,,,,SLMT_80J,sku,1,,,,2026-05-12T08:24:38.295135+00:00
+a083d09f-3566-4579-8002-71f6b23de74b,51,2026-05-02,Paws and Fiesta,bazaar,connecticut_arcade,sale,,,,BFLV_100J,sku,1,450,cash,,2026-05-12T08:24:38.295135+00:00
+734c965f-a45a-43d3-83c8-6db83347a9bd,52,2026-05-02,Paws and Fiesta,bazaar,connecticut_arcade,sale,,,,ASRT1_90J,sku,1,475,cash,,2026-05-12T08:24:38.295135+00:00
+5bcdd5f6-785d-4252-a901-7f4a380e1103,53,2026-05-02,Paws and Fiesta,bazaar,connecticut_arcade,sale,,,,ASRT1_90J,sku,1,475,cash,,2026-05-12T08:24:38.295135+00:00
+49970a97-9a8b-4a97-ba60-a94fcca3213f,53,2026-05-02,Paws and Fiesta,bazaar,connecticut_arcade,sale,,,,plastic_tongs,freebie,1,0,,,2026-05-12T08:24:38.295135+00:00
+f29d68b4-f2d4-4f68-9668-811a1de173e8,54,2026-05-02,Paws and Fiesta,bazaar,connecticut_arcade,sale,,,,BFLV_100J,sku,1,825,gcash,,2026-05-12T08:24:38.295135+00:00
+8d784a30-1209-46b9-a49c-d29bc64a773d,54,2026-05-02,Paws and Fiesta,bazaar,connecticut_arcade,sale,,,,SLMT_80J,sku,1,,,,2026-05-12T08:24:38.295135+00:00
+9116f168-dd07-48b3-87b6-5d128a3035ca,54,2026-05-02,Paws and Fiesta,bazaar,connecticut_arcade,sale,,,,plastic_tongs,freebie,1,0,,,2026-05-12T08:24:38.295135+00:00
+29b1dba2-3758-483e-855b-07629aeae74f,55,2026-05-02,Paws and Fiesta,bazaar,connecticut_arcade,sale,,,,PKTL_70J,sku,1,500,gcash,,2026-05-12T08:24:38.295135+00:00
+5ce7ce74-e067-46c1-a744-0342e8e672cf,56,2026-05-03,Paws and Fiesta,bazaar,connecticut_arcade,sale,,,,BFLV_100J,sku,1,450,gcash,,2026-05-12T08:24:38.295135+00:00
