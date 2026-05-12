@@ -168,3 +168,22 @@ seeds:
         shipping_cost_php: text
         delivered_date: text
         notes: text
+
+  - name: event_transactions
+    config:
+      column_types:
+        transaction_id: text
+        event_date: text
+        event_name: text
+        event_type: text
+        event_location: text
+        transaction_type: text
+        customer_name: text
+        customer_contact: text
+        customer_address: text
+        purchase_id: text
+        purchase_type: text
+        quantity: text
+        price: text
+        payment_method: text
+        notes: text
