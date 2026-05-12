@@ -15,6 +15,7 @@ sources:
       - name: sku_pricing
       - name: supplier_order_line_items
       - name: supplier_order_shipments
+      - name: event_transactions
 
 models:
 
