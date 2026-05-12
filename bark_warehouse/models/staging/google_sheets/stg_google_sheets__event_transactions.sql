@@ -1,0 +1,16 @@
+select      nullif(trim(transaction_id),'')::int as transaction_id,
+            nullif(trim(event_date),'')::date    as event_date,
+            nullif(trim(event_name),'')          as event_name,
+            nullif(trim(event_type),'')          as event_type,
+            nullif(trim(event_location),'')      as event_location,
+            nullif(trim(transaction_type),'')    as transaction_type,
+            nullif(trim(customer_name),'')       as customer_name,
+            nullif(trim(customer_contact),'')    as customer_contact,
+            nullif(trim(customer_address),'')    as customer_address,
+            nullif(trim(purchase_id),'')         as purchase_id,
+            nullif(trim(purchase_type),'')       as purchase_type,
+            nullif(trim(quantity),'')::int       as quantity,
+            nullif(trim(price),'')::int          as price,
+            nullif(trim(payment_method),'')      as payment_method,
+            nullif(trim(notes),'')               as notes
+from        {{ source('google_sheets', 'events_transactions') }}

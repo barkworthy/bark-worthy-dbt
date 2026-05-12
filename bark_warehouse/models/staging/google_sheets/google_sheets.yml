@@ -536,3 +536,39 @@ models:
       - name: shipping_cost_php
       - name: delivered_date
       - name: notes
+  - name: stg_google_sheets__event_transactions
+    description: ""
+    columns:
+      - name: transaction_id
+        tests:
+          - not_null
+      - name: event_date
+        tests:
+          - not_null
+      - name: event_name
+        tests:
+          - not_null
+      - name: event_type
+        tests:
+          - not_null
+      - name: event_location
+        tests:
+          - not_null
+      - name: transaction_type
+        tests:
+          - not_null
+      - name: customer_name
+      - name: customer_contact
+      - name: customer_address
+      - name: purchase_id
+        tests:
+          - not_null
+      - name: purchase_type
+        tests:
+          - not_null
+      - name: quantity
+        tests:
+          - not_null
+      - name: price
+      - name: payment_method
+      - name: notes
