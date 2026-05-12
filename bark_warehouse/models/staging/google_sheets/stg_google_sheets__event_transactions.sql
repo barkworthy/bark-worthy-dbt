@@ -13,4 +13,4 @@ select      nullif(trim(transaction_id),'')::int as transaction_id,
             nullif(trim(price),'')::int          as price,
             nullif(trim(payment_method),'')      as payment_method,
             nullif(trim(notes),'')               as notes
-from        {{ source('google_sheets', 'events_transactions') }}
+from        {{ source('google_sheets', 'event_transactions') }}
