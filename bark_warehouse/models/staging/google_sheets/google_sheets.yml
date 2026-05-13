@@ -401,10 +401,6 @@ models:
               arguments:
                 to: ref('stg_google_sheets__sku_components')
                 field: sku_id
-      - name: min_quantity
-        tests:
-          - not_null
-      - name: max_quantity
       - name: total_price
         tests:
           - not_null

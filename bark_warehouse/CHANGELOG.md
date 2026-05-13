@@ -1,5 +1,10 @@
 # Changelog
 
+## v1.16.0
+- added int_supplier_order_line_items
+- added int_supplier_orders
+- added int_supplier_order_shipments
+
 ## v1.15.0
 - added event_transactions table
 

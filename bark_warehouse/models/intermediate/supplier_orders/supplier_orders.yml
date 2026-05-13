@@ -1,0 +1,131 @@
+version: 2
+
+models:
+  - name: int_supplier_orders
+    description: Supplier order-level aggregation derived from supplier order line items.
+
+    columns:
+      - name: order_id
+        description: Unique identifier for the supplier order.
+        tests:
+          - not_null
+          - unique
+
+      - name: supplier_paid_date
+        description: Date the supplier payment was completed.
+
+      - name: supplier_name
+        description: Name of the supplier for the order.
+
+      - name: supplier_contact
+        description: Supplier contact person or contact details.
+
+      - name: order_total_cost_currency
+        description: Original currency used for the supplier order total cost.
+
+      - name: purchase_name
+        description: Distinct list of purchase names associated with the order.
+
+      - name: purchase_type
+        description: Distinct list of purchase types associated with the order.
+
+      - name: order_total_cost_php
+        description: Total supplier order cost converted to PHP.
+
+      - name: order_total_cost_original
+        description: Total supplier order cost in the original currency.
+
+      - name: notes
+        description: Distinct notes associated with the supplier order.
+
+  - name: int_supplier_order_line_items
+    description: Supplier order line items enriched with allocated PHP costs derived from supplier order totals.
+
+    columns:
+      - name: order_id
+        description: Supplier order identifier.
+
+      - name: purchase_name
+        description: Purchase name associated with the line item.
+
+      - name: order_quantity
+        description: Quantity ordered for the line item.
+
+      - name: order_unit
+        description: Unit of measurement for the ordered quantity.
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['bag', 'piece', 'jar']
+
+      - name: unit_net_weight_g
+        description: Net weight per unit in grams.
+
+      - name: original_item_total_cost
+        description: Original total cost for the individual line item in the original currency.
+
+      - name: original_order_currency
+        description: Original currency used for the order.
+
+      - name: order_total_cost_original
+        description: Total supplier order cost in the original currency.
+
+      - name: item_total_cost_php
+        description: |
+          Allocated total line item cost in PHP based on proportional allocation
+          from the supplier order total.
+
+      - name: item_unit_cost_php
+        description: Allocated PHP unit cost for the line item.
+
+      - name: order_total_cost_php
+        description: Total supplier order cost in PHP.
+
+      - name: rejects
+        description: Quantity of rejected items.
+
+      - name: notes
+        description: Notes associated with the line item.
+
+  - name: int_supplier_order_shipments
+    description: Shipment-level aggregation for supplier orders.
+    columns:
+      - name: shipment_id
+        description: Unique identifier for the shipment.
+        tests:
+          - unique
+          - not_null
+
+      - name: order_id
+        description: Supplier order associated with the shipment.
+
+      - name: intl_forwarder_paid_date
+        description: Date payment to the international forwarder was completed.
+
+      - name: intl_forwarder_company
+        description: International forwarding company handling the shipment.
+
+      - name: intl_forwarder_contact
+        description: Contact name for the international forwarder.
+
+      - name: freight_type
+        description: Freight method or shipment type.
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['sea', 'air']
+
+      - name: delivered_date
+        description: Date the shipment was delivered.
+
+      - name: shipping_cost_php
+        description: Total shipment shipping cost in PHP.
+
+      - name: purchase_name
+        description: Distinct list of purchase names associated with the shipment.
+
+      - name: purchase_type
+        description: Distinct list of purchase types associated with the shipment.
+
+      - name: notes
+        description: Distinct notes associated with the shipment.
