@@ -48,6 +48,13 @@ models:
       - name: purchase_name
         description: Purchase name associated with the line item.
 
+      - name: purchase_type
+        description: Purchase type associated with the line item.
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['packaging', 'sku', 'ingredient']
+
       - name: order_quantity
         description: Quantity ordered for the line item.
 
