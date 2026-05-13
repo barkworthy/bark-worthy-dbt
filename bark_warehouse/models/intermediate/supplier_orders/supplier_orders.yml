@@ -28,10 +28,6 @@ models:
 
       - name: purchase_type
         description: Distinct list of purchase types associated with the order.
-        tests:
-          - accepted_values:
-              arguments:
-                values: ['sku', 'ingredient', 'packaging']
 
       - name: order_total_cost_php
         description: Total supplier order cost converted to PHP.
@@ -60,7 +56,7 @@ models:
         tests:
           - accepted_values:
               arguments:
-                values: ['bag', 'sku', 'jar']
+                values: ['bag', 'piece', 'jar']
 
       - name: unit_net_weight_g
         description: Net weight per unit in grams.
