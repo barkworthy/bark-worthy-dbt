@@ -7,7 +7,8 @@ models:
       Each row represents a received inventory event for a specific item,
       sourced from supplier deliveries (SKUs) or non-SKU inventory purchases
       such as packaging and freebies. Only physically received items with
-      confirmed delivery dates and quantities are included.
+      confirmed delivery dates. Quantity can be null, for cases where shipments
+      have arrived but the contents have not been counted.
 
     columns:
       - name: source_id

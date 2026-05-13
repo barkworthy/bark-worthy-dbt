@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.16.1
+- updated int_inventory_in yml description
+- added int_supplier_order_line_items.purchase_type
+
 ## v1.16.0
 - added int_supplier_order_line_items
 - added int_supplier_orders

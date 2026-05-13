@@ -9,6 +9,7 @@ order_total as (
 
 select 		o.order_id,
 			o.purchase_name,
+			o.purchase_type,
 			o.order_quantity,
 			o.order_unit,
 			o.unit_net_weight_g,
