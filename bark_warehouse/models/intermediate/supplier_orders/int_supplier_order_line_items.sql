@@ -12,11 +12,13 @@ select 		o.order_id,
 			o.order_quantity,
 			o.order_unit,
 			o.unit_net_weight_g,
-			o.original_order_total_cost as original_item_total_cost,
-			o.original_order_currency,
+			o.original_order_total_cost 								 as item_total_cost_original,
+			o.original_order_currency									 as item_total_cost_original_currency,
 			ot.order_total_cost_original,
-			(o.original_order_total_cost / ot.order_total_cost_original) * order_total_cost_php as item_total_cost_php,
-			(o.original_order_total_cost / ot.order_total_cost_original) * order_total_cost_php / order_quantity as item_unit_cost_php,
+			(o.original_order_total_cost / ot.order_total_cost_original)
+				* order_total_cost_php 								     as item_total_cost_php,
+			(o.original_order_total_cost / ot.order_total_cost_original)
+				* order_total_cost_php / order_quantity 				 as item_unit_cost_php,
 			ot.order_total_cost_php,
 			o.rejects,
 			o.notes
