@@ -140,7 +140,7 @@ models:
       - name: notes
         description: Distinct notes associated with the shipment.
 
-  - name: int_supplier_order_line_items
+  - name: int_supplier_order_shipment_line_items
     description: Shipment line items enriched with allocated shipping costs based on proportional units received within each shipment.
 
     columns:
