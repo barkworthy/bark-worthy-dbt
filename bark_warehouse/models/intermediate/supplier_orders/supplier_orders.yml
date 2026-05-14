@@ -125,6 +125,9 @@ models:
       - name: delivered_date
         description: Date the shipment was delivered.
 
+      - name: total_units_received
+        description: Total units associated with the shipment
+
       - name: shipping_cost_php
         description: Total shipment shipping cost in PHP.
 
