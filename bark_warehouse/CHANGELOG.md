@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.17.0
+- added int_supplier_order_shipment_line_items
+- added int_supplier_order_shipments.total_units_received
+
 ## v1.16.2
 - bug fix for int_supplier_orders.order_total_cost_original
 

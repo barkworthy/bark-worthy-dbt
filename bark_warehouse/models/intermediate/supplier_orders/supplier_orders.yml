@@ -125,6 +125,9 @@ models:
       - name: delivered_date
         description: Date the shipment was delivered.
 
+      - name: total_units_received
+        description: Total units associated with the shipment
+
       - name: shipping_cost_php
         description: Total shipment shipping cost in PHP.
 
@@ -136,3 +139,34 @@ models:
 
       - name: notes
         description: Distinct notes associated with the shipment.
+
+  - name: int_supplier_order_shipment_line_items
+    description: Shipment line items enriched with allocated shipping costs based on proportional units received within each shipment.
+
+    columns:
+      - name: shipment_id
+        description: Unique identifier for the shipment.
+
+        tests:
+          - not_null
+
+      - name: order_id
+        description: Supplier order associated with the shipment line item.
+
+        tests:
+          - not_null
+
+      - name: purchase_name
+        description: Purchase name associated with the shipment line item.
+
+      - name: purchase_type
+        description: Purchase category or type associated with the shipment line item.
+
+      - name: units_received
+        description: Number of units received for the shipment line item.
+
+      - name: total_item_shipping_cost
+        description: Allocated total shipping cost in PHP for the shipment line item based on proportional units received within the shipment.
+
+      - name: unit_shipping_cost
+        description: Allocated shipping cost per received unit in PHP.
