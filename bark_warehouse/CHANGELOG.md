@@ -1,5 +1,8 @@
 # Changelog
 
+## v1.16.2
+- bug fix for int_supplier_orders.order_total_cost_original
+
 ## v1.16.1
 - updated int_inventory_in yml description
 - added int_supplier_order_line_items.purchase_type
