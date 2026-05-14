@@ -22,8 +22,8 @@ Check all that apply:
 - [ ] Database / schemas
 - [ ] Docker / infra
 - [ ] External APIs
-- [ ] Tests only
-- [ ] Docs only
+- [ ] Tests
+- [ ] Docs
 - [ ] Other (describe):
 
 ---
