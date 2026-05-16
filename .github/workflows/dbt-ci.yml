@@ -83,23 +83,9 @@ jobs:
       - name: Run dbt CI
         working-directory: bark_warehouse
         run: |
-          if [ -f ../state/manifest.json ]; then
-            echo "Running slim CI"
-
-            dbt build \
-              --profiles-dir ../.ci \
-              --target ci \
-              --select +state:modified+ \
-              --exclude test_name:relationships \
-              --state ../state \
-              --indirect-selection cautious
-          else
-            echo "No previous manifest — running full build"
-
-            dbt build \
-              --profiles-dir ../.ci \
-              --target ci
-          fi
+          dbt build \
+            --profiles-dir ../.ci \
+            --target ci
       # - name: Show failing inventory rows
       #   run: |
       #     echo "=== FAILING INVENTORY ROWS ==="
