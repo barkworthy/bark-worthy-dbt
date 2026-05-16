@@ -2,6 +2,7 @@
 
 ## v1.17.1
 - cleaned up data types
+- debugged github workflow
 
 ## v1.17.0
 - added int_supplier_order_shipment_line_items

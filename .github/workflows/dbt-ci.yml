@@ -72,15 +72,6 @@ jobs:
 
           cp target/manifest.json ../../state/manifest.json
 
-      - name: Debug modified nodes
-        working-directory: bark_warehouse
-        run: |
-          dbt ls \
-            --profiles-dir ../.ci \
-            --target ci \
-            --select state:modified \
-            --state ../state
-
       - name: Run dbt CI
         working-directory: bark_warehouse
         run: |
@@ -90,7 +81,7 @@ jobs:
             dbt build \
               --profiles-dir ../.ci \
               --target ci \
-              --select state:modified \
+              --select state:modified+ \
               --exclude test_name:relationships \
               --state ../state \
               --indirect-selection eager
@@ -101,25 +92,6 @@ jobs:
               --profiles-dir ../.ci \
               --target ci
           fi
-
-      # - name: Run dbt CI
-      #   working-directory: bark_warehouse
-      #   run: |
-      #     if [ -f ../state/manifest.json ]; then
-      #       echo "Running slim CI"
-      #       dbt build \
-      #         --profiles-dir ../.ci \
-      #         --target ci \
-      #         --select +state:modified+ --exclude test_name:relationships \
-      #         --state ../state \
-      #         --indirect-selection eager
-      #     else
-      #       echo "No previous manifest — running full build"
-      #       dbt build \
-      #         --profiles-dir ../.ci \
-      #         --target ci
-      #     fi
-
       # - name: Show failing inventory rows
       #   run: |
       #     echo "=== FAILING INVENTORY ROWS ==="
