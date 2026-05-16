@@ -72,6 +72,14 @@ jobs:
 
           cp target/manifest.json ../../state/manifest.json
 
+      - name: Build staging models
+        working-directory: bark_warehouse
+        run: |
+          dbt build \
+            --profiles-dir ../.ci \
+            --target ci \
+            --select staging
+
       - name: Run dbt CI
         working-directory: bark_warehouse
         run: |
