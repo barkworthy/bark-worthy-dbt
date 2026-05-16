@@ -84,7 +84,7 @@ jobs:
               --select state:modified+ \
               --exclude test_name:relationships \
               --state ../state \
-              --indirect-selection eager
+              --indirect-selection cautious
           else
             echo "No previous manifest — running full build"
 
