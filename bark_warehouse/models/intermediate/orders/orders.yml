@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: int_order_line_items_sources_unified
+  - name: int_order_line_items_unified_raw
     description: >
       "Raw unified order line items combining direct sales and Shopee sales.
       This model standardizes the column schema across sources while preserving

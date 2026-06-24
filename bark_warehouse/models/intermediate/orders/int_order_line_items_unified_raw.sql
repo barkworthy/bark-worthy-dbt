@@ -52,3 +52,30 @@ select 		order_id,
 			null as cancelled_date,
 			null as notes 
 from 		{{ ref('stg_google_sheets__shopee_sales') }}
+
+union all
+
+select 		transaction_id as order_id,
+			'event' as order_source,
+			event_date::timestamp as ordered_timestamp,
+			customer_name,
+			purchase_id,
+			purchase_type,
+			quantity,
+			event_date::timestamp as paid_date,
+			payment_method,
+			price as price_at_purchase,
+			null as price_adjustment_reason,
+			price as gross_revenue,
+			null as voucher,
+			null as fees_and_charges,
+			price as net_revenue,
+			'in_person' as platform,
+			event_name as channel,
+			'in_person' as delivery_method,
+			event_date::timestamp as delivered_date,
+			null as delivery_fee,
+			null as delivery_address,
+			null as cancelled_date,
+			notes
+from 		{{ ref('stg_google_sheets__event_transactions') }}
