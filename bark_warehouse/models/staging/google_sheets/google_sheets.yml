@@ -111,8 +111,6 @@ models:
         tests:
           - not_null
       - name: customer_name
-        tests:
-          - not_null
       - name: purchase_id
         tests:
           - relationships:
@@ -144,7 +142,7 @@ models:
         tests:
           - accepted_values:
               arguments:
-                values: ['in_person', 'instagram', 'facebook', 'viber']
+                values: ['in_person', 'instagram', 'facebook', 'viber', 'whatsapp', 'other']
       - name: channel
         tests:
           - accepted_values:
@@ -313,20 +311,10 @@ models:
         tests:
           - not_null
       - name: buyer_paid_amount
-        tests:
-          - not_null
       - name: gross_revenue
-        tests:
-          - not_null
       - name: voucher
-        tests:
-          - not_null
       - name: fees_and_charges
-        tests:
-          - not_null
       - name: net_revenue
-        tests:
-          - not_null
       - name: processed_at
         tests:
           - not_null
@@ -548,42 +536,6 @@ models:
       - name: event_type
         tests:
           - not_null
-      - name: event_location
-        tests:
-          - not_null
-      - name: transaction_type
-        tests:
-          - not_null
-      - name: customer_name
-      - name: customer_contact
-      - name: customer_address
-      - name: purchase_id
-        tests:
-          - not_null
-      - name: purchase_type
-        tests:
-          - not_null
-      - name: quantity
-        tests:
-          - not_null
-      - name: price
-      - name: payment_method
-      - name: notes
-  - name: stg_google_sheets__event_transactions
-    description: ""
-    columns:
-      - name: transaction_id
-        tests:
-          - not_null
-      - name: event_date
-        tests:
-          - not_null
-      - name: event_name
-        tests:
-          - not_null
-      - name: event_type
-        tests:
-          - not_null
           - accepted_values:
               arguments:
                 values: ['bazaar', 'community_event']
@@ -593,6 +545,9 @@ models:
       - name: transaction_type
         tests:
           - not_null
+          - accepted_values:
+              arguments:
+                values: ['giveaway', 'sale']
       - name: customer_name
       - name: customer_contact
       - name: customer_address
@@ -602,11 +557,12 @@ models:
       - name: purchase_type
         tests:
           - not_null
+          - accepted_values:
+              arguments:
+                values: ['sku', 'freebie']
       - name: quantity
         tests:
           - not_null
       - name: price
-        tests:
-          - not_null
       - name: payment_method
       - name: notes

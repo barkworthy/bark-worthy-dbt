@@ -79,3 +79,4 @@ select 		transaction_id as order_id,
 			null as cancelled_date,
 			notes
 from 		{{ ref('stg_google_sheets__event_transactions') }}
+where 		transaction_type = 'sale'

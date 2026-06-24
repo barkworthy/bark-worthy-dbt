@@ -38,3 +38,14 @@ select 		seeding_id as item_id,
 			delivered_date as movement_date
 from 		{{ ref('stg_google_sheets__creator_seedings') }}
 where 		delivered_date is not null
+
+union all
+
+select 		transaction_id as item_id,
+			'events' as item_source,
+			purchase_id as item_name,
+			purchase_type as item_type,
+			quantity,
+			event_date as movement_date
+from 		{{ ref('stg_google_sheets__event_transactions') }}
+where 		transaction_type = 'giveaway'
