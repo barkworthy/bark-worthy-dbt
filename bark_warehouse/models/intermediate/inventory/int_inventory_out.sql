@@ -21,7 +21,7 @@ from 		valid_orders o
 union all 
 
 select 		movement_id as item_id,
-			'inventory_movements' as item_source,
+			'inventory_movement' as item_source,
 			item_name,
 			item_type,
 			abs(quantity_change) as quantity,
@@ -31,7 +31,7 @@ from 		{{ ref('stg_google_sheets__inventory_movement') }}
 union all
 
 select 		seeding_id as item_id,
-			'creator_seedings' as item_source,
+			'creator_seeding' as item_source,
 			product_id_sent as item_name,
 			product_type as item_type,
 			1 as quantity,
