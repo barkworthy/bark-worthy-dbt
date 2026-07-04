@@ -42,7 +42,7 @@ where 		delivered_date is not null
 union all
 
 select 		transaction_id as item_id,
-			'events' as item_source,
+			'event' as item_source,
 			purchase_id as item_name,
 			purchase_type as item_type,
 			quantity,
