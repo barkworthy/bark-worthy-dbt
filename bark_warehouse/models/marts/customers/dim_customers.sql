@@ -9,6 +9,7 @@ base as (
 				max(ordered_timestamp) as last_order_timestamp
 	from 		{{ ref('fact_orders') }}
 	where 		is_valid_order
+				and customer_name is not null
 	group by 	1,2
 ),
 
