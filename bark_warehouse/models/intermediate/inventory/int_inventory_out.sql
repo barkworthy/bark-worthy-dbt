@@ -21,7 +21,7 @@ from 		valid_orders o
 union all 
 
 select 		movement_id as item_id,
-			'inventory_movements' as item_source,
+			'inventory_movement' as item_source,
 			item_name,
 			item_type,
 			abs(quantity_change) as quantity,
@@ -31,10 +31,21 @@ from 		{{ ref('stg_google_sheets__inventory_movement') }}
 union all
 
 select 		seeding_id as item_id,
-			'creator_seedings' as item_source,
+			'creator_seeding' as item_source,
 			product_id_sent as item_name,
 			product_type as item_type,
 			1 as quantity,
 			delivered_date as movement_date
 from 		{{ ref('stg_google_sheets__creator_seedings') }}
 where 		delivered_date is not null
+
+union all
+
+select 		transaction_id as item_id,
+			'event' as item_source,
+			purchase_id as item_name,
+			purchase_type as item_type,
+			quantity,
+			event_date as movement_date
+from 		{{ ref('stg_google_sheets__event_transactions') }}
+where 		transaction_type = 'giveaway'

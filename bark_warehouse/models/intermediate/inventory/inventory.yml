@@ -85,7 +85,7 @@ models:
           - not_null
           - accepted_values:
               arguments:
-                values: ['creator_seedings', 'inventory_movements', 'shopee', 'direct']
+                values: ['creator_seeding', 'inventory_movement', 'shopee', 'direct', 'event']
 
       - name: item_name
         description: Identifier of the product or item leaving inventory

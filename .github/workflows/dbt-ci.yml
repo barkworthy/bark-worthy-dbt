@@ -78,14 +78,13 @@ jobs:
           dbt build \
             --profiles-dir ../.ci \
             --target ci
-      # - name: Show failing inventory rows
+      # - name: Show failing tests
       #   run: |
-      #     echo "=== FAILING INVENTORY ROWS ==="
-      #     psql -h localhost -U testuser -d testdb -c "
-      #     select item_name, item_type, movement_date, inventory_stock
-      #     from public.fact_inventory_stock
-      #     where inventory_stock < 0
-      #     order by movement_date;
-      #     "
+      #       psql -h localhost -U testuser -d testdb -c "
+      #       select order_source, order_id, count(*)
+      #       from public.fact_orders
+      #       group by order_source,order_id
+      #       having count(*) > 1;
+      #       "
       #   env:
       #     PGPASSWORD: testpass

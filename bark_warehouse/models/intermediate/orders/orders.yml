@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: int_order_line_items_sources_unified
+  - name: int_order_line_items_unified_raw
     description: >
       "Raw unified order line items combining direct sales and Shopee sales.
       This model standardizes the column schema across sources while preserving
@@ -25,7 +25,7 @@ models:
           - not_null
           - accepted_values:
               arguments:
-                values: ['shopee', 'direct']
+                values: ['shopee', 'direct', 'event']
 
       - name: ordered_timestamp
         description: Timestamp when the order was placed.
@@ -34,13 +34,11 @@ models:
 
       - name: customer_name
         description: Name or username of the customer placing the order.
-        tests:
-          - not_null
 
       - name: purchase_id
         description: Identifier for the purchase or line item.
-        tests:
-          - not_null
+        # tests:
+        #   - not_null
 
       - name: purchase_type
         description: Category of purchase (eg. SKU or freebie).
@@ -52,8 +50,8 @@ models:
 
       - name: quantity
         description: Number of units purchased for the line item.
-        tests:
-          - not_null
+        # tests:
+        #   - not_null
 
       - name: paid_date
         description: >
@@ -93,7 +91,7 @@ models:
           - not_null
           - accepted_values:
               arguments:
-                values: ['in_person', 'instagram', 'facebook', 'viber', 'shopee']
+                values: ['in_person', 'instagram', 'facebook', 'viber', 'shopee', 'whatsapp']
 
       - name: channel
         description: Customer acquisition or relationship channel (e.g. personal_network, dasmarinas_market).

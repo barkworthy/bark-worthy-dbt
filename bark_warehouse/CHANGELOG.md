@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.18.0
+- renamed int_order_line_items_sources_unified to int_order_line_items_unified_raw
+- added event_transactions to int_inventory_out and int_order_line_items_unified_raw
+
 ## v1.17.1
 - cleaned up data types
 - debugged github workflow

@@ -17,7 +17,7 @@ base as (
 				sum(net_revenue) filter (where purchase_type = 'sku') 				as total_net_revenue,
 				coalesce(sum(quantity) filter (where purchase_type = 'freebie'),0)	as freebies_quantity,
 				count(purchase_id) filter (where purchase_type = 'freebie') 		as num_freebie_types
-	from        {{ ref('int_order_line_items_sources_unified') }}
+	from        {{ ref('int_order_line_items_unified_raw') }}
 	group by 	order_id,
 				order_source,
 				ordered_timestamp,
