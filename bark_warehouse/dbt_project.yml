@@ -1,6 +1,6 @@
 
 name: 'bark_warehouse'
-version: '1.18.0'
+version: '1.19.0'
 
 # This setting configures which "profile" dbt uses for this project.
 profile: 'bark_warehouse'

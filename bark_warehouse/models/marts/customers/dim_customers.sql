@@ -2,7 +2,10 @@ with
 
 base as (
 	select 		customer_name,
-				order_source as source, 
+				case
+					when order_source in ('event','direct') then 'direct/event'
+					else order_source
+				end as source,
 				count(distinct order_id) as lifetime_num_orders,
 				sum(total_net_revenue) as lifetime_revenue,
 				min(ordered_timestamp) as first_order_timestamp,
