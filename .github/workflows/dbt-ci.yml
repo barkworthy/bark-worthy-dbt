@@ -60,9 +60,12 @@ jobs:
           path: main_branch
 
       - name: Build manifest from master for state comparison
-        working-directory: main_branch/doghouse
+        working-directory: main_branch
         run: |
-          mkdir -p ../../state
+          mkdir -p ../state
+
+          # master keeps the old project directory name until the rename merges
+          cd "$([ -d doghouse ] && echo doghouse || echo bark_warehouse)"
 
           dbt deps --profiles-dir ../.ci
 
