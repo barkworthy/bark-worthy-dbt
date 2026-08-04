@@ -1,4 +1,4 @@
-bark_warehouse:
+doghouse:
   outputs:
     dev:
       type: postgres
