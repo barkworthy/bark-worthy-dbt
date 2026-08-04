@@ -46,11 +46,11 @@ jobs:
           done
 
       - name: dbt deps
-        working-directory: bark_warehouse
+        working-directory: doghouse
         run: dbt deps --profiles-dir .ci
 
       - name: Seed raw fixtures
-        working-directory: bark_warehouse
+        working-directory: doghouse
         run: dbt seed --profiles-dir ../.ci --target ci
 
       - name: Checkout main for state comparison
@@ -60,7 +60,7 @@ jobs:
           path: main_branch
 
       - name: Build manifest from master for state comparison
-        working-directory: main_branch/bark_warehouse
+        working-directory: main_branch/doghouse
         run: |
           mkdir -p ../../state
 
@@ -73,7 +73,7 @@ jobs:
           cp target/manifest.json ../../state/manifest.json
 
       - name: Run dbt CI
-        working-directory: bark_warehouse
+        working-directory: doghouse
         run: |
           dbt build \
             --profiles-dir ../.ci \
